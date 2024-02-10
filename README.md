@@ -1,2 +1,1 @@
-# yodo
-You Only Die Once - A Dark Souls tracker
+# You Only Die Once - A Dark Souls tracker

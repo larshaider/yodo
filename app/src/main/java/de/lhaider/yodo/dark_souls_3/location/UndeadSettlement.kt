@@ -7,7 +7,9 @@ import de.lhaider.yodo.dark_souls_3.enemy.DS3MiniBoss.BorealOutriderKnight
 import de.lhaider.yodo.dark_souls_3.enemy.DS3MiniBoss.Demon
 import de.lhaider.yodo.ui.text.UIText
 
-class UndeadSettlement : AbstractDS3Location(UIText.ResourceText(R.string.undead_settlement), "undead_settlement") {
+class UndeadSettlement : AbstractDS3Location("undead_settlement") {
+
+    override val name = UIText.ResourceText(R.string.undead_settlement)
 
     override val enemies = listOf(
         HolyKnightHodrick,

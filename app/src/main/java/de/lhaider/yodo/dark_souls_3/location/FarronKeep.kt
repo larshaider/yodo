@@ -8,7 +8,9 @@ import de.lhaider.yodo.dark_souls_3.enemy.DS3MiniBoss.RavenousCrystalLizard
 import de.lhaider.yodo.dark_souls_3.enemy.DS3MiniBoss.StrayDemon
 import de.lhaider.yodo.ui.text.UIText
 
-class FarronKeep : AbstractDS3Location(UIText.ResourceText(R.string.farron_keep), "farron_keep") {
+class FarronKeep : AbstractDS3Location("farron_keep") {
+
+    override val name = UIText.ResourceText(R.string.farron_keep)
 
     override val enemies = listOf(
         LondorPaleShade,

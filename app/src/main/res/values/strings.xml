@@ -15,4 +15,14 @@
     <string name="abyss_watchers">Abyss Watchers</string>
     <string name="stray_demon">Stray Demon</string>
     <string name="londor_pale_shade">Londor Pale Shade</string>
+    <string name="cathedral_of_the_deep">Cathedral of the Deep</string>
+    <string name="deacons_of_the_deep">Deacons of the Deep</string>
+    <string name="deep_accursed">Deep Accursed</string>
+    <string name="longfinger_kirk">Longfinger Kirk</string>
+    <string name="catacombs_of_carthus">Catacombs of Carthus</string>
+    <string name="high_lord_wolnir">High Lord Wolnir</string>
+    <string name="knight_slayer_tsorig">Knight Slayer Tsorig</string>
+    <string name="smouldering_lake">Smouldering Lake</string>
+    <string name="old_demon_king">Old Demon King</string>
+    <string name="carthus_sandworm">Carthus Sandworm</string>
 </resources>

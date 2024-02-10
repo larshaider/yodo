@@ -1,4 +1,4 @@
-package de.lhaider.yodo.enemy.domain
+package de.lhaider.yodo.domain.enemy
 
 import de.lhaider.yodo.ui.text.UIText
 

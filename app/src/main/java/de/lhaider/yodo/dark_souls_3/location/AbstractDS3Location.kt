@@ -1,4 +1,4 @@
-package de.lhaider.yodo.location.data
+package de.lhaider.yodo.dark_souls_3.location
 
 import de.lhaider.yodo.location.domain.Location
 import de.lhaider.yodo.ui.text.UIText

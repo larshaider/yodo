@@ -1,4 +1,4 @@
-package de.lhaider.yodo.enemy.data
+package de.lhaider.yodo.dark_souls_3.enemy
 
 import de.lhaider.yodo.R
 import de.lhaider.yodo.enemy.domain.MiniBoss

@@ -3,4 +3,16 @@
     <string name="cemetery_of_ash">Cemetery Of Ash</string>
     <string name="iudex_gundyr">Iudex Gundyr</string>
     <string name="ravenous_crystal_lizard">Ravenous Crystal Lizard</string>
+    <string name="undead_settlement">Undead Settlement</string>
+    <string name="boreal_outrider_knight">Boreal Outrider Knight</string>
+    <string name="demon">Demon</string>
+    <string name="curse_rotted_greatwood">Curse-Rotted Greatwood</string>
+    <string name="holy_knight_hodrick">Holy Knight Hodrick</string>
+    <string name="road_of_sacrifices">Road of Sacrifices</string>
+    <string name="crystal_sage">Crystal Sage</string>
+    <string name="yellowfinger_heysel">Yellowfinger Heysel</string>
+    <string name="farron_keep">Farron Keep</string>
+    <string name="abyss_watchers">Abyss Watchers</string>
+    <string name="stray_demon">Stray Demon</string>
+    <string name="londor_pale_shade">Londor Pale Shade</string>
 </resources>

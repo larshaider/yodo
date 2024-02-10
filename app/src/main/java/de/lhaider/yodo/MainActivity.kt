@@ -11,6 +11,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import de.lhaider.yodo.dark_souls_3.game.DarkSouls3
 import de.lhaider.yodo.ui.theme.YouOnlyDieOnceTheme
 
 class MainActivity : ComponentActivity() {
@@ -21,7 +22,7 @@ class MainActivity : ComponentActivity() {
             YouOnlyDieOnceTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     Greeting(
-                        name = "Android",
+                        name = DarkSouls3().locations[0].name.asString(),
                         modifier = Modifier.padding(innerPadding)
                     )
                 }

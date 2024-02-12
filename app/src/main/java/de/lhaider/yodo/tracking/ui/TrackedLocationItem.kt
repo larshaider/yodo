@@ -1,27 +1,41 @@
 package de.lhaider.yodo.tracking.ui
 
+import androidx.compose.foundation.BorderStroke
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.material3.Card
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.OutlinedCard
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.unit.dp
 import de.lhaider.yodo.tracking.domain.TrackedEnemy
 import de.lhaider.yodo.tracking.domain.TrackedLocation
 
 @Composable
 fun TrackedLocationItem(
-    location: TrackedLocation,
+    tracked: TrackedLocation,
     onEnemyClicked: (TrackedEnemy) -> Unit
 ) {
-    Card(
+    OutlinedCard(
+        shape = RoundedCornerShape(0),
+        border = BorderStroke(1.dp, Color.Black),
         modifier = Modifier.fillMaxWidth()
     ) {
-        val locationScore = "(${location.currentPoints}/${location.maxPoints})"
-        Text(text = location.location.name.asString() + " $locationScore")
+        Column(
+            modifier = Modifier.padding(8.dp, 0.dp),
+        ) {
+            val locationScore = "(${tracked.currentPoints}/${tracked.maxPoints})"
+            Text(
+                text = tracked.location.name.asString() + " $locationScore"
+            )
 
-        location.enemies.forEach {
-            TrackedEnemyItem(enemy = it) {
-                onEnemyClicked(it)
+            tracked.enemies.forEach {
+                TrackedEnemyItem(tracked = it) {
+                    onEnemyClicked(it)
+                }
             }
         }
     }

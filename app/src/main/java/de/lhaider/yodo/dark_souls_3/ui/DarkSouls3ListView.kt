@@ -1,6 +1,5 @@
-package de.lhaider.yodo.dark_souls_3
+package de.lhaider.yodo.dark_souls_3.ui
 
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
@@ -9,7 +8,6 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.Button
-import androidx.compose.material3.Card
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -17,7 +15,7 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
-import de.lhaider.yodo.tracking.domain.isKilled
+import de.lhaider.yodo.tracking.ui.TrackedLocationItem
 
 @Composable
 fun DarkSouls3ListView(
@@ -44,18 +42,9 @@ fun DarkSouls3ListView(
         }
 
         LazyColumn {
-            items(locations) { tl ->
-                Card(
-                    modifier = Modifier.fillMaxWidth()
-                ) {
-                    val locationScore = "(${tl.currentPoints}/${tl.maxPoints})"
-                    Text(text = tl.location.name.asString() + " $locationScore")
-                    tl.enemies.forEach { te ->
-                        val state = if (te.isKilled()) " is killed." else " is alive."
-                        Text(
-                            modifier = Modifier.clickable { if (te.isKilled()) viewModel.delete(te.killId!!) else viewModel.add(tl.location, te.enemy) }, text = te.enemy.name.asString() + state
-                        )
-                    }
+            items(locations) { location ->
+                TrackedLocationItem(location) { enemy ->
+                    viewModel.onEnemyClicked(location, enemy)
                 }
 
                 Spacer(

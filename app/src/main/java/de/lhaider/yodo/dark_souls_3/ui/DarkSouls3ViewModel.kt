@@ -1,22 +1,16 @@
-package de.lhaider.yodo.dark_souls_3
+package de.lhaider.yodo.dark_souls_3.ui
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import de.lhaider.yodo.dark_souls_3.game.DarkSouls3
-import de.lhaider.yodo.domain.enemy.Enemy
-import de.lhaider.yodo.domain.location.Location
 import de.lhaider.yodo.save.domain.KilledEnemyRepo
 import de.lhaider.yodo.tracking.data.MainTrackedEnemy
 import de.lhaider.yodo.tracking.data.MainTrackedLocation
 import de.lhaider.yodo.tracking.domain.TrackedEnemy
 import de.lhaider.yodo.tracking.domain.TrackedLocation
 import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.SharingStarted
-import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
-import kotlinx.coroutines.flow.map
-import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -70,14 +64,14 @@ class DarkSouls3ViewModel @Inject constructor(
         }
     }
 
-    fun add(location: Location, enemy: Enemy) {
+    fun onEnemyClicked(location: TrackedLocation, enemy: TrackedEnemy) {
         viewModelScope.launch {
-            repo.create(location.identifier, enemy.identifier)
-        }
-    }
+            val killId = enemy.killId
+            if (killId == null) {
+                repo.create(location.location.identifier, enemy.enemy.identifier)
+                return@launch
+            }
 
-    fun delete(killId: Long) {
-        viewModelScope.launch {
             repo.delete(killId)
         }
     }

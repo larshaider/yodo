@@ -23,12 +23,13 @@ import de.lhaider.yodo.tracking.domain.isKilled
 fun DarkSouls3ListView(
     viewModel: DarkSouls3ViewModel = hiltViewModel()
 ) {
-    val isLoading = viewModel.isLoading.collectAsState()
-    val locations = viewModel.locations.collectAsState()
-    val currentPoints = viewModel.currentPoints.collectAsState()
-    val maxPoints = viewModel.maxPoints.collectAsState()
+    val uiState = viewModel.uiState.collectAsState()
+    val isLoading = uiState.value.isLoading
+    val locations = uiState.value.locations
+    val currentPoints = uiState.value.currentPoints
+    val maxPoints = uiState.value.maxPoints
 
-    if (isLoading.value) {
+    if (isLoading) {
         CircularProgressIndicator(modifier = Modifier.fillMaxSize(0.75f))
         return
     }
@@ -36,14 +37,14 @@ fun DarkSouls3ListView(
     Column(
         modifier = Modifier.fillMaxSize()
     ) {
-        Text(text = "Score: ${currentPoints.value} of ${maxPoints.value}")
+        Text(text = "Score: $currentPoints of $maxPoints")
 
-        Button(onClick = { viewModel.reset() }) {
+        Button(onClick = viewModel::reset) {
             Text(text = "Reset")
         }
 
         LazyColumn {
-            items(locations.value) { tl ->
+            items(locations) { tl ->
                 Card(
                     modifier = Modifier.fillMaxWidth()
                 ) {
@@ -62,7 +63,6 @@ fun DarkSouls3ListView(
                         .size(8.dp)
                         .fillMaxWidth()
                 )
-
             }
         }
     }

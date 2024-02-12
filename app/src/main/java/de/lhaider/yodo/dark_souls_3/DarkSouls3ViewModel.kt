@@ -26,21 +26,17 @@ class DarkSouls3ViewModel @Inject constructor(
     private val repo: KilledEnemyRepo
 ) : ViewModel() {
 
+    data class UIState(
+        val isLoading: Boolean = true,
+        val locations: List<TrackedLocation> = emptyList(),
+        val currentPoints: Int = 0,
+        val maxPoints: Int = 0
+    )
+
     private val game = DarkSouls3()
 
-    private val _isLoading = MutableStateFlow(true)
-    val isLoading = _isLoading.asStateFlow()
-
-    private val _locations = MutableStateFlow(emptyList<TrackedLocation>())
-    val locations = _locations.asStateFlow()
-
-    val currentPoints: StateFlow<Int> = _locations.map { locations ->
-        locations.sumOf { it.currentPoints }
-    }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(), 0)
-
-    val maxPoints: StateFlow<Int> = _locations.map { locations ->
-        locations.sumOf { it.maxPoints }
-    }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(), 0)
+    private val _uiState = MutableStateFlow(UIState())
+    val uiState = _uiState.asStateFlow()
 
     init {
         collectRepoUpdates()
@@ -62,8 +58,14 @@ class DarkSouls3ViewModel @Inject constructor(
                     trackedLocations.add(trackedLocation)
                 }
 
-                _locations.update { trackedLocations }
-                _isLoading.update { false }
+                _uiState.update { state ->
+                    state.copy(
+                        isLoading = false,
+                        locations = trackedLocations,
+                        currentPoints = trackedLocations.sumOf { it.currentPoints },
+                        maxPoints = trackedLocations.sumOf { it.maxPoints }
+                    )
+                }
             }
         }
     }

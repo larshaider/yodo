@@ -34,7 +34,9 @@ fun DarkSouls3ListView(
     }
 
     Column(
-        modifier = Modifier.fillMaxSize().padding(8.dp)
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(8.dp)
     ) {
         Text(text = "Score: $currentPoints of $maxPoints")
 
@@ -44,7 +46,10 @@ fun DarkSouls3ListView(
 
         LazyColumn {
             items(locations) { location ->
-                TrackedLocationItem(location) { enemy ->
+                TrackedLocationItem(
+                    modifier = Modifier.fillMaxWidth(),
+                    tracked = location
+                ) { enemy ->
                     viewModel.onEnemyClicked(location, enemy)
                 }
 

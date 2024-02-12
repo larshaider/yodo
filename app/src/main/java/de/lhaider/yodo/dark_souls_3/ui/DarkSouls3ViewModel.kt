@@ -68,7 +68,7 @@ class DarkSouls3ViewModel @Inject constructor(
         viewModelScope.launch {
             val killId = enemy.killId
             if (killId == null) {
-                repo.create(location.location.identifier, enemy.enemy.identifier)
+                repo.create(location.identifier, enemy.identifier)
                 return@launch
             }
 

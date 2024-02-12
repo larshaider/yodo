@@ -1,10 +1,10 @@
 package de.lhaider.yodo.tracking.domain
 
-import de.lhaider.yodo.domain.enemy.Enemy
-
 interface TrackedEnemy {
-    val enemy: Enemy
+    val identifier: String
     val killId: Long?
+    val currentPoints: Int
+    val maxPoints: Int
 }
 
 fun TrackedEnemy.isKilled(): Boolean {

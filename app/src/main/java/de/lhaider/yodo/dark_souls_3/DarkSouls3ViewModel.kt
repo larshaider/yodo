@@ -44,7 +44,7 @@ class DarkSouls3ViewModel @Inject constructor() : ViewModel() {
             for (location in game.locations) {
                 val trackedEnemies = mutableListOf<TrackedEnemy>()
                 for (enemy in location.enemies) {
-                    val trackedEnemy = MainTrackedEnemy(enemy, false)
+                    val trackedEnemy = MainTrackedEnemy(enemy, null)
                     trackedEnemies.add(trackedEnemy)
                 }
 

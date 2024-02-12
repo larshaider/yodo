@@ -12,6 +12,7 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
+import de.lhaider.yodo.tracking.domain.isKilled
 
 @Composable
 fun DarkSouls3ListView(
@@ -30,10 +31,16 @@ fun DarkSouls3ListView(
             ) {
                 Text(text = tl.location.name.asString())
                 tl.enemies.forEach { te ->
-                    Text(text = te.enemy.name.asString())
+                    val state = if (te.isKilled()) " is killed." else " is alive."
+                    Text(text = te.enemy.name.asString() + state)
                 }
             }
-            Spacer(modifier = Modifier.size(8.dp).fillMaxWidth())
+
+            Spacer(
+                modifier = Modifier
+                    .size(8.dp)
+                    .fillMaxWidth()
+            )
         }
     }
 }

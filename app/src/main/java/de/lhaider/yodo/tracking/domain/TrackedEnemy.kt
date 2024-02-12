@@ -4,5 +4,9 @@ import de.lhaider.yodo.domain.enemy.Enemy
 
 interface TrackedEnemy {
     val enemy: Enemy
-    val isKilled: Boolean
+    val killId: Long?
+}
+
+fun TrackedEnemy.isKilled(): Boolean {
+    return this.killId != null
 }

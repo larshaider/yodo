@@ -5,5 +5,5 @@ import de.lhaider.yodo.tracking.domain.TrackedEnemy
 
 data class MainTrackedEnemy(
     override val enemy: Enemy,
-    override val isKilled: Boolean
+    override val killId: Long? = null
 ) : TrackedEnemy

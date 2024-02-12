@@ -1,27 +1,40 @@
 package de.lhaider.yodo.save.data
 
+import de.lhaider.yodo.common.coroutine.IoDispatcher
+import de.lhaider.yodo.save.domain.KilledEnemy
 import de.lhaider.yodo.save.domain.KilledEnemyRepo
+import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
 class KilledEnemyDtoRepo @Inject constructor(
-    private val dao: KilledEnemyDao
+    private val dao: KilledEnemyDao,
+    @IoDispatcher private val dispatcher: CoroutineDispatcher
 ) : KilledEnemyRepo {
 
-    override fun getAll(): Flow<List<KilledEnemyDto>> {
-        return dao.getAll()
+    override suspend fun getAll(): Flow<List<KilledEnemy>> {
+        return withContext(dispatcher) {
+            dao.getAll()
+        }
     }
 
-    override fun create(locationId: String, enemyId: String) {
-        val dto = KilledEnemyDto(locationId = locationId, enemyId = enemyId)
-        dao.insert(dto)
+    override suspend fun create(locationId: String, enemyId: String) {
+        return withContext(dispatcher) {
+            val dto = KilledEnemyDto(locationId = locationId, enemyId = enemyId)
+            dao.insert(dto)
+        }
     }
 
-    override fun delete(id: Long) {
-        dao.deleteById(id)
+    override suspend fun delete(id: Long) {
+        return withContext(dispatcher) {
+            dao.deleteById(id)
+        }
     }
 
-    override fun deleteAll() {
-        dao.deleteAll()
+    override suspend fun deleteAll() {
+        return withContext(dispatcher) {
+            dao.deleteAll()
+        }
     }
 }

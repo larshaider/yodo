@@ -1,11 +1,10 @@
 package de.lhaider.yodo.save.domain
 
-import de.lhaider.yodo.save.data.KilledEnemyDto
 import kotlinx.coroutines.flow.Flow
 
 interface KilledEnemyRepo {
-    fun getAll(): Flow<List<KilledEnemyDto>>
-    fun create(locationId: String, enemyId: String)
-    fun delete(id: Long)
-    fun deleteAll()
+    suspend fun getAll(): Flow<List<KilledEnemy>>
+    suspend fun create(locationId: String, enemyId: String)
+    suspend fun delete(id: Long)
+    suspend fun deleteAll()
 }

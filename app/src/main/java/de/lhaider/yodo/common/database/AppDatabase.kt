@@ -1,4 +1,4 @@
-package de.lhaider.yodo.database
+package de.lhaider.yodo.common.database
 
 import androidx.room.Database
 import androidx.room.RoomDatabase

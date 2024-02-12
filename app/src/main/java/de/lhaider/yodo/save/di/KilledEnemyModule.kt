@@ -5,7 +5,7 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
-import de.lhaider.yodo.database.AppDatabase
+import de.lhaider.yodo.common.database.AppDatabase
 import de.lhaider.yodo.save.data.KilledEnemyDao
 import de.lhaider.yodo.save.data.KilledEnemyDtoRepo
 import de.lhaider.yodo.save.domain.KilledEnemyRepo

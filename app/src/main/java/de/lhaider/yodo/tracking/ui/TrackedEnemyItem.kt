@@ -19,7 +19,6 @@ import androidx.compose.ui.unit.dp
 import androidx.constraintlayout.compose.ConstraintLayout
 import de.lhaider.yodo.tracking.domain.TrackedEnemy
 import de.lhaider.yodo.tracking.domain.isKilled
-import de.lhaider.yodo.ui.extension.name
 
 @Composable
 fun TrackedEnemyItem(
@@ -54,7 +53,7 @@ fun TrackedEnemyItem(
             )
 
             Text(
-                text = enemy.name(),
+                text = enemy.name.asString(),
                 color = Color.White,
                 textAlign = TextAlign.Start,
                 modifier = Modifier

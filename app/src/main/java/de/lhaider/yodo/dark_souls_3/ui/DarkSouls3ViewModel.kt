@@ -43,12 +43,14 @@ class DarkSouls3ViewModel @Inject constructor(
                 for (location in game.locations) {
                     val trackedEnemies = mutableListOf<TrackedEnemy>()
                     for (enemy in location.enemies) {
+                        val name = DS3NameUtil.nameOf(enemy)
                         val killedEnemy = killed.find { it.locationId == location.identifier && it.enemyId == enemy.identifier }
-                        val trackedEnemy = MainTrackedEnemy(enemy, killedEnemy?.id)
+                        val trackedEnemy = MainTrackedEnemy(enemy, name, killedEnemy?.id)
                         trackedEnemies.add(trackedEnemy)
                     }
 
-                    val trackedLocation = MainTrackedLocation(location, trackedEnemies)
+                    val name = DS3NameUtil.nameOf(location)
+                    val trackedLocation = MainTrackedLocation(location, name, trackedEnemies)
                     trackedLocations.add(trackedLocation)
                 }
 

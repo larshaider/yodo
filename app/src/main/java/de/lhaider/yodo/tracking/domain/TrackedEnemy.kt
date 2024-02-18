@@ -1,7 +1,10 @@
 package de.lhaider.yodo.tracking.domain
 
+import de.lhaider.yodo.ui.text.UIText
+
 interface TrackedEnemy {
     val identifier: String
+    val name: UIText
     val killId: Long?
     val currentPoints: Int
     val maxPoints: Int

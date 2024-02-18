@@ -5,9 +5,11 @@ import de.lhaider.yodo.domain.enemy.Enemy
 import de.lhaider.yodo.domain.enemy.Invader
 import de.lhaider.yodo.domain.enemy.MiniBoss
 import de.lhaider.yodo.tracking.domain.TrackedEnemy
+import de.lhaider.yodo.ui.text.UIText
 
 data class MainTrackedEnemy(
     private val enemy: Enemy,
+    override val name: UIText,
     override val killId: Long? = null
 ) : TrackedEnemy {
     override val identifier = enemy.identifier

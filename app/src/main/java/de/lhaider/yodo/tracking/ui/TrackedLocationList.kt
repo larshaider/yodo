@@ -5,10 +5,11 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
-import de.lhaider.yodo.dark_souls_3.ui.LocationHeader
 import de.lhaider.yodo.tracking.domain.TrackedEnemy
 import de.lhaider.yodo.tracking.domain.TrackedLocation
 
@@ -36,4 +37,14 @@ fun TrackedLocationList(
             }
         }
     }
+}
+
+@Composable
+fun LocationHeader(location: TrackedLocation) {
+    val locationScore = "(${location.currentPoints}/${location.maxPoints})"
+    val headline = location.name.asString() + " $locationScore"
+    Text(
+        text = headline,
+        color = Color.LightGray
+    )
 }

@@ -46,18 +46,6 @@ fun TrackedEnemy.name(): String {
 }
 
 @Composable
-fun TrackedEnemy.image(): Painter {
-    return when (this.identifier) {
-        DS3Boss.IudexGundyr.identifier -> painterResource(R.drawable.ds3_iudex_gundyr)
-
-        DS3MiniBoss.RavenousCrystalLizard.identifier -> painterResource(R.drawable.ds3_ravenous_crystal_lizard)
-        DS3MiniBoss.SwordMaster.identifier -> painterResource(R.drawable.ds3_sword_master)
-
-        else -> painterResource(R.drawable.ds3_iudex_gundyr)
-    }
-}
-
-@Composable
 fun TrackedLocation.name(): String {
     return when (this.identifier) {
         DS3Location.CemeteryOfAsh.identifier -> stringResource(R.string.cemetery_of_ash)
@@ -69,23 +57,5 @@ fun TrackedLocation.name(): String {
         DS3Location.SmoulderingLake.identifier -> stringResource(R.string.smouldering_lake)
 
         else -> DEFAULT_NAME
-    }
-}
-
-@Composable
-fun Game.name(): String {
-    return when (this) {
-        is DarkSouls3 -> "Dark Souls 3"
-
-        else -> DEFAULT_NAME
-    }
-}
-
-@Composable
-fun Game.image(): Painter {
-    return when (this) {
-        is DarkSouls3 -> painterResource(R.drawable.ds_background)
-
-        else -> painterResource(R.drawable.ds_background)
     }
 }

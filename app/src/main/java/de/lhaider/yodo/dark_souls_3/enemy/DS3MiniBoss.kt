@@ -7,6 +7,7 @@ sealed class DS3MiniBoss(enemyId: String) : MiniBoss {
     override val pointsForKill = 3
 
     data object RavenousCrystalLizard : DS3MiniBoss("ravenous_crystal_lizard")
+    data object SwordMaster : DS3MiniBoss("sword_master")
     data object BorealOutriderKnight : DS3MiniBoss("boreal_outrider_knight")
     data object Demon : DS3MiniBoss("demon")
     data object StrayDemon : DS3MiniBoss("stray_demon")

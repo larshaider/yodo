@@ -18,6 +18,7 @@ import de.lhaider.yodo.dark_souls_3.enemy.DS3MiniBoss.DeepAccursed
 import de.lhaider.yodo.dark_souls_3.enemy.DS3MiniBoss.Demon
 import de.lhaider.yodo.dark_souls_3.enemy.DS3MiniBoss.RavenousCrystalLizard
 import de.lhaider.yodo.dark_souls_3.enemy.DS3MiniBoss.StrayDemon
+import de.lhaider.yodo.dark_souls_3.enemy.DS3MiniBoss.SwordMaster
 import de.lhaider.yodo.domain.enemy.Enemy
 import de.lhaider.yodo.domain.location.Location
 
@@ -28,6 +29,7 @@ sealed class DS3Location(locationId: String, override val enemies: List<Enemy>) 
         "cemetery_of_ash",
         listOf(
             RavenousCrystalLizard,
+            SwordMaster,
             IudexGundyr
         )
     )

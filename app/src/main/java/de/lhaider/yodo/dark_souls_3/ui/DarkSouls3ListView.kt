@@ -1,22 +1,23 @@
 package de.lhaider.yodo.dark_souls_3.ui
 
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.Button
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.paint
+import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
-import de.lhaider.yodo.tracking.ui.TrackedLocationItem
+import de.lhaider.yodo.R
+import de.lhaider.yodo.tracking.domain.TrackedLocation
+import de.lhaider.yodo.tracking.ui.TrackedLocationList
+import de.lhaider.yodo.ui.extension.name
 
 @Composable
 fun DarkSouls3ListView(
@@ -36,6 +37,7 @@ fun DarkSouls3ListView(
     Column(
         modifier = Modifier
             .fillMaxSize()
+            .paint(painterResource(R.drawable.ds_background), contentScale = ContentScale.FillHeight, alpha = 0.9f)
             .padding(8.dp)
     ) {
         Text(text = "Score: $currentPoints of $maxPoints")
@@ -44,21 +46,14 @@ fun DarkSouls3ListView(
             Text(text = "Reset")
         }
 
-        LazyColumn {
-            items(locations) { location ->
-                TrackedLocationItem(
-                    modifier = Modifier.fillMaxWidth(),
-                    tracked = location
-                ) { enemy ->
-                    viewModel.onEnemyClicked(location, enemy)
-                }
-
-                Spacer(
-                    modifier = Modifier
-                        .size(8.dp)
-                        .fillMaxWidth()
-                )
-            }
+        TrackedLocationList(locations) { location, enemy ->
+            viewModel.onEnemyClicked(location, enemy)
         }
     }
+}
+
+@Composable
+fun LocationHeader(location: TrackedLocation) {
+    val locationScore = "(${location.currentPoints}/${location.maxPoints})"
+    Text(text = location.name() + " $locationScore")
 }

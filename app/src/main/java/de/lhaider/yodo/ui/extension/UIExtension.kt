@@ -34,6 +34,7 @@ fun TrackedEnemy.name(): String {
         DS3Invader.KnightSlayerTsorig.identifier -> stringResource(R.string.knight_slayer_tsorig)
 
         DS3MiniBoss.RavenousCrystalLizard.identifier -> stringResource(R.string.ravenous_crystal_lizard)
+        DS3MiniBoss.SwordMaster.identifier -> stringResource(R.string.sword_master)
         DS3MiniBoss.BorealOutriderKnight.identifier -> stringResource(R.string.boreal_outrider_knight)
         DS3MiniBoss.Demon.identifier -> stringResource(R.string.demon)
         DS3MiniBoss.StrayDemon.identifier -> stringResource(R.string.stray_demon)
@@ -47,11 +48,12 @@ fun TrackedEnemy.name(): String {
 @Composable
 fun TrackedEnemy.image(): Painter {
     return when (this.identifier) {
-        DS3Boss.IudexGundyr.identifier -> painterResource(R.drawable.iudex_gundyr)
+        DS3Boss.IudexGundyr.identifier -> painterResource(R.drawable.ds3_iudex_gundyr)
 
-        DS3MiniBoss.RavenousCrystalLizard.identifier -> painterResource(R.drawable.ravenous_crystal_lizard)
+        DS3MiniBoss.RavenousCrystalLizard.identifier -> painterResource(R.drawable.ds3_ravenous_crystal_lizard)
+        DS3MiniBoss.SwordMaster.identifier -> painterResource(R.drawable.ds3_sword_master)
 
-        else -> painterResource(R.drawable.cemetry_of_ash)
+        else -> painterResource(R.drawable.ds3_iudex_gundyr)
     }
 }
 
@@ -71,15 +73,6 @@ fun TrackedLocation.name(): String {
 }
 
 @Composable
-fun TrackedLocation.image(): Painter {
-    return when (this.identifier) {
-        DS3Location.CemeteryOfAsh.identifier -> painterResource(R.drawable.cemetry_of_ash)
-        DS3Location.UndeadSettlement.identifier -> painterResource(R.drawable.undead_settlement)
-         else -> painterResource(R.drawable.cemetry_of_ash)
-    }
-}
-
-@Composable
 fun Game.name(): String {
     return when (this) {
         is DarkSouls3 -> "Dark Souls 3"
@@ -90,5 +83,9 @@ fun Game.name(): String {
 
 @Composable
 fun Game.image(): Painter {
-    return painterResource(R.drawable.cemetry_of_ash)
+    return when (this) {
+        is DarkSouls3 -> painterResource(R.drawable.ds_background)
+
+        else -> painterResource(R.drawable.ds_background)
+    }
 }

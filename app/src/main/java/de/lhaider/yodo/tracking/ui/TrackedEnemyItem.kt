@@ -1,16 +1,15 @@
 package de.lhaider.yodo.tracking.ui
 
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Card
-import androidx.compose.material3.CardColors
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Checkbox
 import androidx.compose.material3.Text
@@ -19,6 +18,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.constraintlayout.compose.ConstraintLayout
 import de.lhaider.yodo.tracking.domain.TrackedEnemy
@@ -34,12 +34,16 @@ fun TrackedEnemyItem(
     Card(
         onClick = onClick,
         shape = RoundedCornerShape(10, 50, 50, 10),
-        colors = CardDefaults.cardColors().copy(containerColor = Color.White.copy(alpha = 0.75f)),
+        colors = CardDefaults.cardColors().copy(containerColor = Color.Black.copy(alpha = 0.75f)),
+        border = BorderStroke(Dp.Hairline, Color.Gray),
         modifier = Modifier
             .fillMaxWidth()
             .height(48.dp)
     ) {
-        ConstraintLayout(modifier = Modifier.padding(0.dp, 4.dp, 4.dp, 4.dp).fillMaxSize()) {
+        ConstraintLayout(modifier = Modifier
+            .padding(0.dp, 4.dp, 4.dp, 4.dp)
+            .fillMaxSize())
+        {
             val (image, text, button) = createRefs()
 
             Checkbox(
@@ -54,6 +58,7 @@ fun TrackedEnemyItem(
 
             Text(
                 text = enemy.name(),
+                color = Color.White,
                 modifier = Modifier
                     .padding(4.dp, 0.dp, 0.dp, 0.dp)
                     .constrainAs(text) {

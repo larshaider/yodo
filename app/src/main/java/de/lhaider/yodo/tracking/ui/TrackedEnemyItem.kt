@@ -13,6 +13,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.constraintlayout.compose.ConstraintLayout
@@ -27,7 +28,7 @@ fun TrackedEnemyItem(
 ) {
     Card(
         onClick = onClick,
-        shape = RoundedCornerShape(10, 50, 50, 10),
+        shape = RoundedCornerShape(10),
         colors = CardDefaults.cardColors().copy(containerColor = Color.Black.copy(alpha = 0.75f)),
         border = BorderStroke(Dp.Hairline, Color.Gray),
         modifier = Modifier
@@ -40,7 +41,7 @@ fun TrackedEnemyItem(
                 .fillMaxSize()
         )
         {
-            val (image, text, button) = createRefs()
+            val (text, button) = createRefs()
 
             Checkbox(
                 checked = enemy.isKilled(),
@@ -55,6 +56,7 @@ fun TrackedEnemyItem(
             Text(
                 text = enemy.name(),
                 color = Color.White,
+                textAlign = TextAlign.Start,
                 modifier = Modifier
                     .padding(4.dp, 0.dp, 0.dp, 0.dp)
                     .constrainAs(text) {

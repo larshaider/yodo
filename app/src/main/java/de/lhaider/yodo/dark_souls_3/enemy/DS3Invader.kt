@@ -11,4 +11,10 @@ sealed class DS3Invader(enemyId: String) : Invader {
     data object LondorPaleShade : DS3Invader("londor_pale_shade")
     data object LongfingerKirk : DS3Invader("longfinger_kirk")
     data object KnightSlayerTsorig : DS3Invader("knight_slayer_tsorig")
+    data object AlvaSeekerOfTheSpurned : DS3Invader("alva_seeker_of_the_spurned")
+    data object CreightonTheWanderer : DS3Invader("creighton_the_wanderer")
+    data object DaughterOfCrystalKriemhild : DS3Invader("daughter_of_crystal_kriemhild")
+    data object LividPyromancerDunnel : DS3Invader("livid_pyromancer_dunnel")
+    data object MoaningKnight : DS3Invader("moaning_knight")
+    data object SilverKnightLedo : DS3Invader("silver_knight_ledo")
 }

@@ -10,6 +10,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.paint
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
@@ -55,5 +56,9 @@ fun DarkSouls3ListView(
 @Composable
 fun LocationHeader(location: TrackedLocation) {
     val locationScore = "(${location.currentPoints}/${location.maxPoints})"
-    Text(text = location.name() + " $locationScore")
+    val headline = location.name() + " $locationScore"
+    Text(
+        text = headline,
+        color = Color.LightGray
+    )
 }

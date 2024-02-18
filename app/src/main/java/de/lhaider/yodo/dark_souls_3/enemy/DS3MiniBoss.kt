@@ -13,4 +13,5 @@ sealed class DS3MiniBoss(enemyId: String) : MiniBoss {
     data object StrayDemon : DS3MiniBoss("stray_demon")
     data object DeepAccursed : DS3MiniBoss("deep_accursed")
     data object CarthusSandworm : DS3MiniBoss("carthus_sandworm")
+    data object SulyvahnsBeast : DS3MiniBoss("sulyvahns_beast")
 }

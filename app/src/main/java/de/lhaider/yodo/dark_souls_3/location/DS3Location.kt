@@ -90,4 +90,18 @@ sealed class DS3Location(locationId: String, override val enemies: List<Enemy>) 
             OldDemonKing
         )
     )
+
+    data object IrithyllOfTheBorealValley : DS3Location("irithyll_of_the_boreal_valley", emptyList())
+    data object ProfanedCapital : DS3Location("profaned_capital", emptyList())
+    data object AnorLondo : DS3Location("anor_londo", emptyList())
+    data object HighWallOfLothric : DS3Location("high_wall_of_lothric", emptyList())
+    data object LothricCastle : DS3Location("lothric_castle", emptyList())
+    data object GrandArchives : DS3Location("grand_archives", emptyList())
+    data object ConsumedKingsGarden : DS3Location("consumed_kings_garden", emptyList())
+    data object UntendedGraves : DS3Location("untended_graves", emptyList())
+    data object ArchdragonPeak : DS3Location("archdragon_peak", emptyList())
+    data object KilnOfTheFirstFlame : DS3Location("kiln_of_the_first_flame", emptyList())
+    data object PaintedWorldOfAriandel : DS3Location("painted_world_of_ariandel", emptyList())
+    data object DregHeap : DS3Location("dreg_heap", emptyList())
+    data object RingedCity : DS3Location("ringed_city", emptyList())
 }

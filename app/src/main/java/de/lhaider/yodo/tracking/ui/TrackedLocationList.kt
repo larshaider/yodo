@@ -8,10 +8,12 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import de.lhaider.yodo.tracking.domain.TrackedEnemy
 import de.lhaider.yodo.tracking.domain.TrackedLocation
+import de.lhaider.yodo.ui.theme.ChromeSilver
+import de.lhaider.yodo.ui.theme.MetallicSilver
 
 @Composable
 fun TrackedLocationList(
@@ -32,7 +34,7 @@ fun TrackedLocationList(
                 Spacer(
                     modifier = Modifier
                         .fillMaxWidth()
-                        .height(4.dp)
+                        .height(8.dp)
                 )
             }
         }
@@ -45,6 +47,7 @@ fun LocationHeader(location: TrackedLocation) {
     val headline = location.name.asString() + " $locationScore"
     Text(
         text = headline,
-        color = Color.LightGray
+        fontSize = 18.sp,
+        color = MetallicSilver
     )
 }

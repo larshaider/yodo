@@ -47,7 +47,6 @@ fun LocationHeader(location: TrackedLocation) {
     val headline = location.name.asString() + " $locationScore"
     Text(
         text = headline,
-        fontSize = 18.sp,
-        color = MetallicSilver
+        fontSize = 18.sp
     )
 }

@@ -41,12 +41,6 @@ fun DarkSouls3ListView(
             .fillMaxSize()
             .padding(8.dp)
     ) {
-        Text(text = "Score: $currentPoints of $maxPoints")
-
-        Button(onClick = viewModel::reset) {
-            Text(text = "Reset")
-        }
-
         TrackedLocationList(locations) { location, enemy ->
             viewModel.onEnemyClicked(location, enemy)
         }

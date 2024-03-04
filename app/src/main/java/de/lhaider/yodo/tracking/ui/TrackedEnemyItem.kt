@@ -33,7 +33,6 @@ fun TrackedEnemyItem(
     Card(
         onClick = onClick,
         shape = RoundedCornerShape(10),
-        colors = CardDefaults.cardColors().copy(containerColor = BloodRed),
         modifier = Modifier
             .fillMaxWidth()
             .height(48.dp)
@@ -49,7 +48,6 @@ fun TrackedEnemyItem(
             Checkbox(
                 checked = enemy.isKilled(),
                 onCheckedChange = { onClick() },
-                colors = CheckboxDefaults.colors().copy(checkedBoxColor = Color.Black, checkedBorderColor = Color.Black, checkedCheckmarkColor = Color.White, uncheckedBoxColor = Color.Black, uncheckedBorderColor = Color.Black),
                 modifier = Modifier.constrainAs(button) {
                     top.linkTo(parent.top)
                     bottom.linkTo(parent.bottom)
@@ -59,7 +57,6 @@ fun TrackedEnemyItem(
 
             Text(
                 text = enemy.name.asString(),
-                color = Color.White,
                 textAlign = TextAlign.Start,
                 modifier = Modifier
                     .padding(4.dp, 0.dp, 0.dp, 0.dp)

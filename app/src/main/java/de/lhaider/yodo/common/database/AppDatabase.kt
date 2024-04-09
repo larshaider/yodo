@@ -5,7 +5,7 @@ import androidx.room.RoomDatabase
 import de.lhaider.yodo.save.data.KilledEnemyDao
 import de.lhaider.yodo.save.data.KilledEnemyDto
 
-@Database(entities = [KilledEnemyDto::class], version = 1)
+@Database(entities = [KilledEnemyDto::class], version = 2)
 abstract class AppDatabase : RoomDatabase() {
     abstract fun killedEnemyDao(): KilledEnemyDao
 }

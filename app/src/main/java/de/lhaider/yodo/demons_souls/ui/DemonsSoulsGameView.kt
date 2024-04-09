@@ -1,29 +1,19 @@
-package de.lhaider.yodo.dark_souls_3.ui
+package de.lhaider.yodo.demons_souls.ui
 
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Button
 import androidx.compose.material3.CircularProgressIndicator
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.paint
-import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.ColorFilter
-import androidx.compose.ui.graphics.ColorMatrix
-import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
-import de.lhaider.yodo.R
 import de.lhaider.yodo.tracking.ui.TrackedLocationList
 
 @Composable
-fun DarkSouls3ListView(
-    viewModel: DarkSouls3ViewModel = hiltViewModel()
+fun DemonsSoulsGameView(
+    viewModel: DemonsSoulsViewModel = hiltViewModel()
 ) {
     val uiState = viewModel.uiState.collectAsState()
     val isLoading = uiState.value.isLoading

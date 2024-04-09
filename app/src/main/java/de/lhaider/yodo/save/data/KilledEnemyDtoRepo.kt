@@ -19,9 +19,15 @@ class KilledEnemyDtoRepo @Inject constructor(
         }
     }
 
-    override suspend fun create(locationId: String, enemyId: String) {
+    override suspend fun getAllBy(gameId: String): Flow<List<KilledEnemy>> {
         return withContext(dispatcher) {
-            val dto = KilledEnemyDto(locationId = locationId, enemyId = enemyId)
+            dao.getAllBy(gameId)
+        }
+    }
+
+    override suspend fun create(gameId: String, locationId: String, enemyId: String) {
+        return withContext(dispatcher) {
+            val dto = KilledEnemyDto(gameId = gameId, locationId = locationId, enemyId = enemyId)
             dao.insert(dto)
         }
     }
@@ -29,6 +35,12 @@ class KilledEnemyDtoRepo @Inject constructor(
     override suspend fun delete(id: Long) {
         return withContext(dispatcher) {
             dao.deleteById(id)
+        }
+    }
+
+    override suspend fun deleteAllBy(gameId: String) {
+        return withContext(dispatcher) {
+            dao.deleteAllBy(gameId)
         }
     }
 

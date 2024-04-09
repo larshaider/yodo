@@ -5,7 +5,8 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.compose.NavHost
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.composable
-import de.lhaider.yodo.dark_souls_3.ui.DarkSouls3ListView
+import de.lhaider.yodo.dark_souls_3.ui.DarkSouls3GameView
+import de.lhaider.yodo.demons_souls.ui.DemonsSoulsGameView
 
 @Composable
 fun AppNavGraph(
@@ -19,15 +20,7 @@ fun AppNavGraph(
         startDestination = startDestination
     ) {
         composable(Screen.Home.route) {
-
-        }
-
-        composable(Screen.DemonsSouls.route) {
-
-        }
-
-        composable(Screen.DarkSouls3.route) {
-            DarkSouls3ListView()
+            DarkSouls3GameView()
         }
     }
 }

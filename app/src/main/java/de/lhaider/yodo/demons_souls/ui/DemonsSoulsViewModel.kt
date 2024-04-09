@@ -1,9 +1,9 @@
-package de.lhaider.yodo.dark_souls_3.ui
+package de.lhaider.yodo.demons_souls.ui
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
-import de.lhaider.yodo.dark_souls_3.game.DarkSouls3
+import de.lhaider.yodo.demons_souls.game.DemonsSouls
 import de.lhaider.yodo.save.domain.KilledEnemyRepo
 import de.lhaider.yodo.tracking.data.MainTrackedEnemy
 import de.lhaider.yodo.tracking.data.MainTrackedLocation
@@ -16,10 +16,9 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class DarkSouls3ViewModel @Inject constructor(
+class DemonsSoulsViewModel @Inject constructor(
     private val repo: KilledEnemyRepo
 ) : ViewModel() {
-
     data class UIState(
         val isLoading: Boolean = true,
         val locations: List<TrackedLocation> = emptyList(),
@@ -27,7 +26,7 @@ class DarkSouls3ViewModel @Inject constructor(
         val maxPoints: Int = 0
     )
 
-    private val game = DarkSouls3()
+    private val game = DemonsSouls()
 
     private val _uiState = MutableStateFlow(UIState())
     val uiState = _uiState.asStateFlow()

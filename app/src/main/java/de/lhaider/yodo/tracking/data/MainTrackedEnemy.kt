@@ -9,10 +9,10 @@ import de.lhaider.yodo.ui.text.UIText
 
 data class MainTrackedEnemy(
     private val enemy: Enemy,
-    override val name: UIText,
     override val killId: Long? = null
 ) : TrackedEnemy {
     override val identifier = enemy.identifier
+    override val name = enemy.name
     override val currentPoints = if (killId == null) 0 else enemy.pointsForKill
     override val maxPoints = enemy.pointsForKill
     override val type = getEnemyType()

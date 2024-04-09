@@ -22,6 +22,6 @@ class AppDatabaseProvideModule {
             applicationContext,
             AppDatabase::class.java,
             "yodo-database"
-        ).build()
+        ).fallbackToDestructiveMigration().build()
     }
 }

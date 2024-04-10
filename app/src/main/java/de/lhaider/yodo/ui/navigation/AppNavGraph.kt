@@ -2,11 +2,10 @@ package de.lhaider.yodo.ui.navigation
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.navigation.compose.NavHost
 import androidx.navigation.NavHostController
+import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import de.lhaider.yodo.dark_souls_3.ui.DarkSouls3GameView
-import de.lhaider.yodo.demons_souls.ui.DemonsSoulsGameView
 
 @Composable
 fun AppNavGraph(

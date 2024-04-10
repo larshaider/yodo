@@ -1,12 +1,13 @@
 package de.lhaider.yodo.demons_souls.enemy
 
+import de.lhaider.yodo.R
 import de.lhaider.yodo.domain.enemy.MiniBoss
 import de.lhaider.yodo.ui.text.UIText
 
 sealed class DemonsSoulsMiniBoss(enemyId: String) : MiniBoss {
     override val identifier = "demons_souls_mini_boss_$enemyId"
     override val pointsForKill = 3
-    override val name = UIText.Dynamic("Undefined")
+    override val name: UIText = UIText.Resource(R.string.undefined)
 }
 
 data object BlueDragon : DemonsSoulsMiniBoss("blue_dragon")

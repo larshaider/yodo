@@ -20,27 +20,13 @@ import de.lhaider.yodo.ui.theme.YouOnlyDieOnceTheme
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
 
-    @OptIn(ExperimentalMaterial3Api::class)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
 
         setContent {
             YouOnlyDieOnceTheme {
-                Scaffold(
-                    modifier = Modifier.fillMaxSize(),
-                    topBar = {
-                        TopAppBar(
-                            title = {
-                                Text(text = "You only die once")
-                            }
-                        )
-                    }
-                ) { innerPadding ->
-                    Box(modifier = Modifier.padding(innerPadding)) {
-                        DarkSouls3GameView()
-                    }
-                }
+                DarkSouls3GameView()
             }
         }
     }

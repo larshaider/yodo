@@ -1,4 +1,4 @@
-package de.lhaider.yodo.core.tracking.ui
+package de.lhaider.yodo.core.ui.dto.ui
 
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -14,8 +14,8 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.constraintlayout.compose.Dimension
-import de.lhaider.yodo.core.tracking.domain.TrackedEnemy
-import de.lhaider.yodo.core.tracking.domain.isKilled
+import de.lhaider.yodo.core.ui.dto.domain.TrackedEnemy
+import de.lhaider.yodo.core.ui.dto.domain.isKilled
 
 @Composable
 fun TrackedEnemyItem(

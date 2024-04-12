@@ -6,10 +6,10 @@ import dagger.assisted.Assisted
 import dagger.assisted.AssistedInject
 import de.lhaider.yodo.common.ui_text.UIText
 import de.lhaider.yodo.core.game.Game
-import de.lhaider.yodo.core.tracking.data.MainTrackedEnemy
-import de.lhaider.yodo.core.tracking.data.MainTrackedLocation
-import de.lhaider.yodo.core.tracking.domain.TrackedEnemy
-import de.lhaider.yodo.core.tracking.domain.TrackedLocation
+import de.lhaider.yodo.core.ui.dto.data.MainTrackedEnemy
+import de.lhaider.yodo.core.ui.dto.data.MainTrackedLocation
+import de.lhaider.yodo.core.ui.dto.domain.TrackedEnemy
+import de.lhaider.yodo.core.ui.dto.domain.TrackedLocation
 import de.lhaider.yodo.db.save.domain.KilledEnemyRepo
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow

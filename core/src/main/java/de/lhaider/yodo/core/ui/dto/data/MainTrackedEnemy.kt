@@ -1,10 +1,10 @@
-package de.lhaider.yodo.core.tracking.data
+package de.lhaider.yodo.core.ui.dto.data
 
 import de.lhaider.yodo.core.enemy.Boss
 import de.lhaider.yodo.core.enemy.Enemy
 import de.lhaider.yodo.core.enemy.Invader
 import de.lhaider.yodo.core.enemy.MiniBoss
-import de.lhaider.yodo.core.tracking.domain.TrackedEnemy
+import de.lhaider.yodo.core.ui.dto.domain.TrackedEnemy
 
 data class MainTrackedEnemy(
     private val enemy: Enemy,

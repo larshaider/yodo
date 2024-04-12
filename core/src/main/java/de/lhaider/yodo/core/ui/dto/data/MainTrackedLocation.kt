@@ -1,8 +1,8 @@
-package de.lhaider.yodo.core.tracking.data
+package de.lhaider.yodo.core.ui.dto.data
 
 import de.lhaider.yodo.core.location.Location
-import de.lhaider.yodo.core.tracking.domain.TrackedEnemy
-import de.lhaider.yodo.core.tracking.domain.TrackedLocation
+import de.lhaider.yodo.core.ui.dto.domain.TrackedEnemy
+import de.lhaider.yodo.core.ui.dto.domain.TrackedLocation
 
 data class MainTrackedLocation(
     private val location: Location,

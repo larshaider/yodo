@@ -5,9 +5,9 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import dagger.hilt.android.AndroidEntryPoint
-import de.lhaider.yodo.core.game.GameView
+import de.lhaider.yodo.core.ui.GameView
 import de.lhaider.yodo.core.ui.gameViewModel
-import de.lhaider.yodo.feature.demons_souls.game.DemonsSouls
+import de.lhaider.yodo.feature.dark_souls3.game.DarkSouls3
 import de.lhaider.yodo.ui.theme.YouOnlyDieOnceTheme
 
 @AndroidEntryPoint
@@ -20,7 +20,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             YouOnlyDieOnceTheme {
                 GameView(
-                    viewModel = gameViewModel(game = DemonsSouls())
+                    viewModel = gameViewModel(game = DarkSouls3())
                 )
             }
         }

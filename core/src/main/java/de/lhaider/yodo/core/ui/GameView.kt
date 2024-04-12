@@ -1,4 +1,4 @@
-package de.lhaider.yodo.core.game
+package de.lhaider.yodo.core.ui
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -20,8 +20,7 @@ import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import de.lhaider.yodo.core.R
-import de.lhaider.yodo.core.tracking.ui.TrackedLocationList
-import de.lhaider.yodo.core.ui.GameViewModel
+import de.lhaider.yodo.core.ui.dto.ui.TrackedLocationList
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -62,7 +61,7 @@ fun GameView(
                         enabled = currentPoints > 0
                     ) {
                         Icon(
-                            modifier = Modifier.padding(4.dp),
+                            modifier = Modifier.padding(8.dp),
                             painter = painterResource(id = R.drawable.ic_death),
                             contentDescription = "Reset current run."
                         )

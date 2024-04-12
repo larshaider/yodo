@@ -1,10 +1,10 @@
-package de.lhaider.yodo.core.tracking.domain
+package de.lhaider.yodo.core.ui.dto.domain
 
 import de.lhaider.yodo.common.ui_text.UIText
 
 interface TrackedLocation {
     val identifier: String
-    val name: de.lhaider.yodo.common.ui_text.UIText
+    val name: UIText
     val enemies: List<TrackedEnemy>
     val currentPoints: Int
     val maxPoints: Int

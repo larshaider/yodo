@@ -1,4 +1,4 @@
-package de.lhaider.yodo.core.tracking.ui
+package de.lhaider.yodo.core.ui.dto.ui
 
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -10,8 +10,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import de.lhaider.yodo.core.tracking.domain.TrackedEnemy
-import de.lhaider.yodo.core.tracking.domain.TrackedLocation
+import de.lhaider.yodo.core.ui.dto.domain.TrackedEnemy
+import de.lhaider.yodo.core.ui.dto.domain.TrackedLocation
 
 @Composable
 fun TrackedLocationList(

@@ -63,7 +63,7 @@ data object CemeteryOfAsh : DS3Location(
         SwordMaster,
         IudexGundyr
     ),
-    de.lhaider.yodo.common.ui_text.UIText.Resource(R.string.cemetery_of_ash)
+    de.lhaider.yodo.common.ui_text.UIText.Resource(R.string.ds3_cemetery_of_ash)
 )
 
 data object UndeadSettlement : DS3Location(
@@ -74,7 +74,7 @@ data object UndeadSettlement : DS3Location(
         Demon,
         CurseRottedGreatwood
     ),
-    de.lhaider.yodo.common.ui_text.UIText.Resource(R.string.undead_settlement)
+    de.lhaider.yodo.common.ui_text.UIText.Resource(R.string.ds3_undead_settlement)
 )
 
 data object RoadOfSacrifices : DS3Location(
@@ -83,7 +83,7 @@ data object RoadOfSacrifices : DS3Location(
         YellowfingerHeysel,
         CrystalSage
     ),
-    de.lhaider.yodo.common.ui_text.UIText.Resource(R.string.road_of_sacrifices)
+    de.lhaider.yodo.common.ui_text.UIText.Resource(R.string.ds3_road_of_sacrifices)
 )
 
 data object FarronKeep : DS3Location(
@@ -95,7 +95,7 @@ data object FarronKeep : DS3Location(
         StrayDemon,
         AbyssWatchers
     ),
-    de.lhaider.yodo.common.ui_text.UIText.Resource(R.string.farron_keep)
+    de.lhaider.yodo.common.ui_text.UIText.Resource(R.string.ds3_farron_keep)
 )
 
 data object CathedralOfTheDeep : DS3Location(
@@ -106,7 +106,7 @@ data object CathedralOfTheDeep : DS3Location(
         DeepAccursed,
         DeaconsOfTheDeep
     ),
-    de.lhaider.yodo.common.ui_text.UIText.Resource(R.string.cathedral_of_the_deep)
+    de.lhaider.yodo.common.ui_text.UIText.Resource(R.string.ds3_cathedral_of_the_deep)
 )
 
 data object CatacombsOfCarthus : DS3Location(
@@ -116,7 +116,7 @@ data object CatacombsOfCarthus : DS3Location(
         Demon,
         HighLordWolnir
     ),
-    de.lhaider.yodo.common.ui_text.UIText.Resource(R.string.catacombs_of_carthus)
+    de.lhaider.yodo.common.ui_text.UIText.Resource(R.string.ds3_catacombs_of_carthus)
 )
 
 data object SmoulderingLake : DS3Location(
@@ -126,7 +126,7 @@ data object SmoulderingLake : DS3Location(
         CarthusSandworm,
         OldDemonKing
     ),
-    de.lhaider.yodo.common.ui_text.UIText.Resource(R.string.smouldering_lake)
+    de.lhaider.yodo.common.ui_text.UIText.Resource(R.string.ds3_smouldering_lake)
 )
 
 data object IrithyllOfTheBorealValley : DS3Location(

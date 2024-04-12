@@ -2,13 +2,14 @@ package de.lhaider.yodo.feature.demons_souls.enemy
 
 import de.lhaider.yodo.common.ui_text.UIText
 import de.lhaider.yodo.core.enemy.Invader
+import de.lhaider.yodo.feature.R
 
 sealed class DemonsSoulsInvader(
     enemyId: String
 ) : Invader {
     override val identifier = "demons_souls_invader_$enemyId"
     override val pointsForKill = 3
-    override val name = UIText.Dynamic("Undefined")
+    override val name = UIText.Resource(R.string.undefined)
 }
 
 data object ExecutionerMiralda : DemonsSoulsInvader("executioner_miralda")

@@ -3,6 +3,7 @@ package de.lhaider.yodo.feature.demons_souls.location
 import de.lhaider.yodo.common.ui_text.UIText
 import de.lhaider.yodo.core.enemy.Enemy
 import de.lhaider.yodo.core.location.Location
+import de.lhaider.yodo.feature.R
 import de.lhaider.yodo.feature.demons_souls.enemy.Adjucator
 import de.lhaider.yodo.feature.demons_souls.enemy.AlfredKnightOfTheTower
 import de.lhaider.yodo.feature.demons_souls.enemy.ArmorSpider
@@ -41,7 +42,7 @@ sealed class DemonsSoulsLocation(
     override val enemies: List<Enemy>
 ) : Location {
     override val identifier = "demons_souls_$locationId"
-    override val name = UIText.Dynamic("Undefined")
+    override val name = UIText.Resource(R.string.undefined)
 }
 
 data object ForlornOutpost : DemonsSoulsLocation(

@@ -2,6 +2,7 @@ package de.lhaider.yodo.feature.demons_souls.game
 
 import de.lhaider.yodo.common.ui_text.UIText
 import de.lhaider.yodo.core.game.Game
+import de.lhaider.yodo.feature.R
 import de.lhaider.yodo.feature.demons_souls.location.BoletarianPalace
 import de.lhaider.yodo.feature.demons_souls.location.ForlornOutpost
 import de.lhaider.yodo.feature.demons_souls.location.ShrineOfStorms
@@ -13,7 +14,7 @@ class DemonsSouls : Game {
 
     override val id = "demons_souls"
 
-    override val name = UIText.Dynamic("Demon's Souls")
+    override val name = UIText.Resource(R.string.demons_souls)
 
     override val locations = listOf(
         ForlornOutpost,

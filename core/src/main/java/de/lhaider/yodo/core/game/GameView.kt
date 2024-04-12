@@ -1,4 +1,4 @@
-package de.lhaider.yodo.feature.dark_souls3.ui
+package de.lhaider.yodo.core.game
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -19,17 +19,18 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
-import androidx.hilt.navigation.compose.hiltViewModel
+import de.lhaider.yodo.core.R
 import de.lhaider.yodo.core.tracking.ui.TrackedLocationList
-import de.lhaider.yodo.feature.R
+import de.lhaider.yodo.core.ui.GameViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun DarkSouls3GameView(
-    viewModel: DarkSouls3ViewModel = hiltViewModel()
+fun GameView(
+    viewModel: GameViewModel
 ) {
     val uiState = viewModel.uiState.collectAsState()
     val isLoading = uiState.value.isLoading
+    val name = uiState.value.gameName
     val locations = uiState.value.locations
     val currentPoints = uiState.value.currentPoints
     val maxPoints = uiState.value.maxPoints
@@ -45,7 +46,7 @@ fun DarkSouls3GameView(
                 title = {
                     Column {
                         Text(
-                            text = "Dark Souls 3",
+                            text = name.asString(),
                             style = MaterialTheme.typography.titleLarge
                         )
 
@@ -71,14 +72,14 @@ fun DarkSouls3GameView(
         }
     ) { innerPadding ->
         Box(modifier = Modifier.padding(innerPadding)) {
-            if (isLoading) {
-                CircularProgressIndicator(modifier = Modifier.fillMaxSize(0.75f))
-            } else {
-                Column(
-                    modifier = Modifier
-                        .fillMaxSize()
-                        .padding(16.dp, 0.dp)
-                ) {
+            Column(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .padding(16.dp, 0.dp)
+            ) {
+                if (isLoading) {
+                    CircularProgressIndicator(modifier = Modifier.fillMaxSize(0.75f))
+                } else {
                     TrackedLocationList(locations) { location, enemy ->
                         viewModel.onEnemyClicked(location, enemy)
                     }

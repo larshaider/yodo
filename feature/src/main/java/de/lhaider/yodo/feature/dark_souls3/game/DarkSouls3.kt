@@ -1,5 +1,6 @@
 package de.lhaider.yodo.feature.dark_souls3.game
 
+import de.lhaider.yodo.common.ui_text.UIText
 import de.lhaider.yodo.core.game.Game
 import de.lhaider.yodo.feature.dark_souls3.location.AnorLondo
 import de.lhaider.yodo.feature.dark_souls3.location.ArchdragonPeak
@@ -25,6 +26,8 @@ import de.lhaider.yodo.feature.dark_souls3.location.UntendedGraves
 class DarkSouls3 : Game {
 
     override val id = "dark_souls_3"
+
+    override val name = UIText.Dynamic("Dark Souls 3")
 
     override val locations = listOf(
         CemeteryOfAsh,

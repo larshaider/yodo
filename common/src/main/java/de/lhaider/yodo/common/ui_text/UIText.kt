@@ -1,4 +1,4 @@
-package de.lhaider.yodo.core.ui_text
+package de.lhaider.yodo.common.ui_text
 
 import androidx.annotation.StringRes
 import androidx.compose.runtime.Composable

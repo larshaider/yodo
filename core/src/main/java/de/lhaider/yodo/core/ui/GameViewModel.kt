@@ -1,35 +1,35 @@
-package de.lhaider.yodo.feature.dark_souls3.ui
+package de.lhaider.yodo.core.ui
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import dagger.hilt.android.lifecycle.HiltViewModel
+import dagger.assisted.Assisted
+import dagger.assisted.AssistedInject
+import de.lhaider.yodo.common.ui_text.UIText
+import de.lhaider.yodo.core.game.Game
 import de.lhaider.yodo.core.tracking.data.MainTrackedEnemy
 import de.lhaider.yodo.core.tracking.data.MainTrackedLocation
 import de.lhaider.yodo.core.tracking.domain.TrackedEnemy
 import de.lhaider.yodo.core.tracking.domain.TrackedLocation
-import de.lhaider.yodo.feature.dark_souls3.game.DarkSouls3
 import de.lhaider.yodo.db.save.domain.KilledEnemyRepo
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
-import javax.inject.Inject
 
-@HiltViewModel
-class DarkSouls3ViewModel @Inject constructor(
+class GameViewModel @AssistedInject constructor(
+    @Assisted private val game: Game,
     private val repo: KilledEnemyRepo
 ) : ViewModel() {
 
     data class UIState(
-        val isLoading: Boolean = true,
-        val locations: List<TrackedLocation> = emptyList(),
-        val currentPoints: Int = 0,
-        val maxPoints: Int = 0
+        val isLoading: Boolean,
+        val gameName: UIText,
+        val locations: List<TrackedLocation>,
+        val currentPoints: Int,
+        val maxPoints: Int
     )
 
-    private val game = DarkSouls3()
-
-    private val _uiState = MutableStateFlow(UIState())
+    private val _uiState = MutableStateFlow(UIState(isLoading = true, gameName = game.name, locations = emptyList(), currentPoints = 0, maxPoints = 0))
     val uiState = _uiState.asStateFlow()
 
     init {

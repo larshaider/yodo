@@ -1,4 +1,4 @@
-package de.lhaider.yodo.core.coroutine
+package de.lhaider.yodo.common.coroutine
 
 import dagger.Module
 import dagger.Provides

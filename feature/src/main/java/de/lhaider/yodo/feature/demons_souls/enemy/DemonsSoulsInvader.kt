@@ -1,7 +1,7 @@
 package de.lhaider.yodo.feature.demons_souls.enemy
 
+import de.lhaider.yodo.common.ui_text.UIText
 import de.lhaider.yodo.core.enemy.Invader
-import de.lhaider.yodo.core.ui_text.UIText
 
 sealed class DemonsSoulsInvader(
     enemyId: String

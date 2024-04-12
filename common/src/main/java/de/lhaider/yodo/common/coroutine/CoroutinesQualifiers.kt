@@ -1,4 +1,4 @@
-package de.lhaider.yodo.core.coroutine
+package de.lhaider.yodo.common.coroutine
 
 import javax.inject.Qualifier
 

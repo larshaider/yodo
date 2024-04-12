@@ -1,8 +1,8 @@
 package de.lhaider.yodo.feature.demons_souls.location
 
+import de.lhaider.yodo.common.ui_text.UIText
 import de.lhaider.yodo.core.enemy.Enemy
 import de.lhaider.yodo.core.location.Location
-import de.lhaider.yodo.core.ui_text.UIText
 import de.lhaider.yodo.feature.demons_souls.enemy.Adjucator
 import de.lhaider.yodo.feature.demons_souls.enemy.AlfredKnightOfTheTower
 import de.lhaider.yodo.feature.demons_souls.enemy.ArmorSpider

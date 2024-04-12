@@ -1,6 +1,6 @@
 package de.lhaider.yodo.db.save.data
 
-import de.lhaider.yodo.core.coroutine.IoDispatcher
+import de.lhaider.yodo.common.coroutine.IoDispatcher
 import de.lhaider.yodo.db.save.domain.KilledEnemy
 import de.lhaider.yodo.db.save.domain.KilledEnemyRepo
 import kotlinx.coroutines.CoroutineDispatcher

@@ -23,5 +23,4 @@ rootProject.name = "You only die once"
 include(":app")
 include(":core")
 include(":db")
-include(":dark_souls3")
-include(":demons_souls")
+include(":feature")

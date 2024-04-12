@@ -5,7 +5,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import dagger.hilt.android.AndroidEntryPoint
-import de.lhaider.yodo.dark_souls_3.ui.DarkSouls3GameView
+import de.lhaider.yodo.feature.dark_souls3.ui.DarkSouls3GameView
 import de.lhaider.yodo.ui.theme.YouOnlyDieOnceTheme
 
 @AndroidEntryPoint

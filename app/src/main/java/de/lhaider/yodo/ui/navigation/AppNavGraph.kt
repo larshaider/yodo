@@ -5,7 +5,7 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import de.lhaider.yodo.dark_souls_3.ui.DarkSouls3GameView
+import de.lhaider.yodo.feature.dark_souls3.ui.DarkSouls3GameView
 
 @Composable
 fun AppNavGraph(

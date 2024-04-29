@@ -53,4 +53,17 @@
     <string name="ds3_halflight_spear_of_the_church">Halflight Spear of the Church</string>
     <string name="ds3_darkeater_midir">Darkeater Midir</string>
     <string name="ds3_slave_knight_gael">Slave Knight Gael</string>
+    <string name="ds3_irithyll_of_the_boreal_valley">irithyll_of_the_boreal_valley</string>
+    <string name="ds3_profaned_capital">profaned_capital</string>
+    <string name="ds3_anor_londo">anor_londo</string>
+    <string name="ds3_high_wall_of_lothric">high_wall_of_lothric</string>
+    <string name="ds3_lothric_castle">lothric_castle</string>
+    <string name="ds3_grand_archives">grand_archives</string>
+    <string name="ds3_consumed_kings_garden">consumed_kings_garden</string>
+    <string name="ds3_untended_graves">untended_graves</string>
+    <string name="ds3_archdragon_peak">archdragon_peak</string>
+    <string name="ds3_kiln_of_the_first_flame">kiln_of_the_first_flame</string>
+    <string name="ds3_painted_world_of_ariandel">painted_world_of_ariandel</string>
+    <string name="ds3_dreg_heap">dreg_heap</string>
+    <string name="ds3_ringed_city">ringed_city</string>
 </resources>

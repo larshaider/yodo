@@ -63,7 +63,7 @@ fun MainScreen(
                 ) {
                     Image(
                         modifier = Modifier.fillMaxWidth(),
-                        painter = painterResource(id = R.drawable.ic_launcher_background),
+                        painter = painterResource(id = R.drawable.bg_demons_souls),
                         contentDescription = "Demon's Souls",
                         contentScale = ContentScale.FillBounds
                     )
@@ -84,7 +84,7 @@ fun MainScreen(
                 ) {
                     Image(
                         modifier = Modifier.fillMaxWidth(),
-                        painter = painterResource(id = R.drawable.ic_launcher_background),
+                        painter = painterResource(id = R.drawable.bg_dark_souls_3),
                         contentDescription = "Dark Souls 3",
                         contentScale = ContentScale.FillBounds
                     )

@@ -13,6 +13,7 @@ sealed class DS3Boss(
 }
 
 data object IudexGundyr : DS3Boss("iudex_gundyr", UIText.Resource(R.string.ds3_iudex_gundyr))
+data object VordtOfTheBorealValley : DS3Boss("vordt_of_the_boreal_valley", UIText.Resource(R.string.ds3_vordt_of_the_boreal_valley))
 data object CurseRottedGreatwood : DS3Boss("curse_rotted_greatwood", UIText.Resource(R.string.ds3_curse_rotted_greatwood))
 data object CrystalSage : DS3Boss("crystal_sage", UIText.Resource(R.string.ds3_crystal_sage))
 data object AbyssWatchers : DS3Boss("abyss_watchers", UIText.Resource(R.string.ds3_abyss_watchers))

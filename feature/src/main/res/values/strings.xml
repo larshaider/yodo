@@ -6,6 +6,7 @@
     <string name="ds3_cemetery_of_ash">Cemetery Of Ash</string>
     <string name="ds3_iudex_gundyr">Iudex Gundyr</string>
     <string name="ds3_ravenous_crystal_lizard">Ravenous Crystal Lizard</string>
+    <string name="ds3_vordt_of_the_boreal_valley">Vordt of the Boreal Valley</string>
     <string name="ds3_undead_settlement">Undead Settlement</string>
     <string name="ds3_boreal_outrider_knight">Boreal Outrider Knight</string>
     <string name="ds3_demon">Demon</string>
@@ -53,6 +54,7 @@
     <string name="ds3_halflight_spear_of_the_church">Halflight Spear of the Church</string>
     <string name="ds3_darkeater_midir">Darkeater Midir</string>
     <string name="ds3_slave_knight_gael">Slave Knight Gael</string>
+
     <string name="ds3_irithyll_of_the_boreal_valley">irithyll_of_the_boreal_valley</string>
     <string name="ds3_profaned_capital">profaned_capital</string>
     <string name="ds3_anor_londo">anor_londo</string>

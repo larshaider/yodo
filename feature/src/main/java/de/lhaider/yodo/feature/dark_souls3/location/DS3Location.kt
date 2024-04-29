@@ -45,6 +45,7 @@ import de.lhaider.yodo.feature.dark_souls3.enemy.SoulOfCinder
 import de.lhaider.yodo.feature.dark_souls3.enemy.StrayDemon
 import de.lhaider.yodo.feature.dark_souls3.enemy.SulyvahnsBeast
 import de.lhaider.yodo.feature.dark_souls3.enemy.SwordMaster
+import de.lhaider.yodo.feature.dark_souls3.enemy.VordtOfTheBorealValley
 import de.lhaider.yodo.feature.dark_souls3.enemy.YellowfingerHeysel
 import de.lhaider.yodo.feature.dark_souls3.enemy.YhormTheGiant
 
@@ -64,6 +65,15 @@ data object CemeteryOfAsh : DS3Location(
         IudexGundyr
     ),
     UIText.Resource(R.string.ds3_cemetery_of_ash)
+)
+
+data object HighWallOfLothric : DS3Location(
+    "high_wall_of_lothric",
+    listOf(
+        VordtOfTheBorealValley,
+        DancerOfTheBorealValley
+    ),
+    UIText.Resource(R.string.ds3_high_wall_of_lothric)
 )
 
 data object UndeadSettlement : DS3Location(
@@ -159,14 +169,6 @@ data object AnorLondo : DS3Location(
         AldrichDevourerOfGods
     ),
     UIText.Resource(R.string.ds3_anor_londo)
-)
-
-data object HighWallOfLothric : DS3Location(
-    "high_wall_of_lothric",
-    listOf(
-        DancerOfTheBorealValley
-    ),
-    UIText.Resource(R.string.ds3_high_wall_of_lothric)
 )
 
 data object LothricCastle : DS3Location(

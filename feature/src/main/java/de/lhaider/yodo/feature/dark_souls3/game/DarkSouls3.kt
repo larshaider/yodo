@@ -32,6 +32,7 @@ class DarkSouls3 : Game {
 
     override val locations = listOf(
         CemeteryOfAsh,
+        HighWallOfLothric,
         UndeadSettlement,
         RoadOfSacrifices,
         FarronKeep,
@@ -41,7 +42,6 @@ class DarkSouls3 : Game {
         IrithyllOfTheBorealValley,
         ProfanedCapital,
         AnorLondo,
-        HighWallOfLothric,
         LothricCastle,
         GrandArchives,
         ConsumedKingsGarden,

@@ -1,5 +1,5 @@
 [versions]
-agp = "8.5.0-alpha05"
+agp = "8.5.0-alpha06"
 constraintlayoutComposeVersion = "1.0.1"
 hiltAndroid = "2.50"
 hiltAndroidX = "1.2.0"

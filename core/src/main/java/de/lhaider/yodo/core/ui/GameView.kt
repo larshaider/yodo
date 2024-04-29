@@ -4,6 +4,8 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
@@ -15,24 +17,28 @@ import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
 import de.lhaider.yodo.core.R
 import de.lhaider.yodo.core.ui.dto.ui.TrackedLocationList
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun GameView(
+    navController: NavController,
     viewModel: GameViewModel
 ) {
-    val uiState = viewModel.uiState.collectAsState()
-    val isLoading = uiState.value.isLoading
-    val name = uiState.value.gameName
-    val locations = uiState.value.locations
-    val currentPoints = uiState.value.currentPoints
-    val maxPoints = uiState.value.maxPoints
+    val uiState by viewModel.uiState.collectAsState()
+    val isLoading = uiState.isLoading
+    val name = uiState.gameName
+    val locations = uiState.locations
+    val currentPoints = uiState.currentPoints
+    val maxPoints = uiState.maxPoints
+    val canChangeSelection = uiState.allowSelectionChange
 
     val scrollBehavior = TopAppBarDefaults.enterAlwaysScrollBehavior()
     Scaffold(
@@ -41,7 +47,6 @@ fun GameView(
             .nestedScroll(scrollBehavior.nestedScrollConnection),
         topBar = {
             TopAppBar(
-                scrollBehavior = scrollBehavior,
                 title = {
                     Column {
                         Text(
@@ -55,18 +60,36 @@ fun GameView(
                         )
                     }
                 },
-                actions = {
-                    IconButton(
-                        onClick = viewModel::reset,
-                        enabled = currentPoints > 0
-                    ) {
+                navigationIcon = {
+                    IconButton(onClick = {
+                        viewModel.onNavigateBack()
+                        navController.navigateUp()
+                    }) {
                         Icon(
-                            modifier = Modifier.padding(8.dp),
-                            painter = painterResource(id = R.drawable.ic_death),
-                            contentDescription = "Reset current run."
+                            imageVector = Icons.AutoMirrored.Filled.ArrowBack,
+                            contentDescription = "Navigate back."
                         )
                     }
-                }
+                },
+                actions = {
+                    if (!isLoading) {
+                        IconButton(
+                            onClick = viewModel::resetRun,
+                            enabled = currentPoints > 0
+                        ) {
+                            Icon(
+                                modifier = Modifier.padding(4.dp),
+                                painter = painterResource(id = R.drawable.ic_death),
+                                contentDescription = "Reset current run."
+                            )
+                        }
+                    }
+                },
+                colors = TopAppBarDefaults.topAppBarColors(
+                    containerColor = MaterialTheme.colorScheme.primaryContainer,
+                    titleContentColor = MaterialTheme.colorScheme.primary,
+                ),
+                scrollBehavior = scrollBehavior
             )
         }
     ) { innerPadding ->
@@ -79,7 +102,7 @@ fun GameView(
                 if (isLoading) {
                     CircularProgressIndicator(modifier = Modifier.fillMaxSize(0.75f))
                 } else {
-                    TrackedLocationList(locations) { location, enemy ->
+                    TrackedLocationList(locations, !canChangeSelection) { location, enemy ->
                         viewModel.onEnemyClicked(location, enemy)
                     }
                 }

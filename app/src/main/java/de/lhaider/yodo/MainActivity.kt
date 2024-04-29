@@ -4,10 +4,10 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.navigation.compose.rememberNavController
 import dagger.hilt.android.AndroidEntryPoint
-import de.lhaider.yodo.core.ui.GameView
-import de.lhaider.yodo.core.ui.gameViewModel
-import de.lhaider.yodo.feature.dark_souls3.game.DarkSouls3
+import de.lhaider.yodo.navigation.NavGraph
+import de.lhaider.yodo.navigation.Screen
 import de.lhaider.yodo.ui.theme.YouOnlyDieOnceTheme
 
 @AndroidEntryPoint
@@ -18,9 +18,12 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
 
         setContent {
+            val navController = rememberNavController()
+
             YouOnlyDieOnceTheme {
-                GameView(
-                    viewModel = gameViewModel(game = DarkSouls3())
+                NavGraph(
+                    navController = navController,
+                    startDestination = Screen.Home
                 )
             }
         }

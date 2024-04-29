@@ -13,12 +13,6 @@ class KilledEnemyDtoRepo @Inject constructor(
     @IoDispatcher private val dispatcher: CoroutineDispatcher
 ) : KilledEnemyRepo {
 
-    override suspend fun getAll(): Flow<List<KilledEnemy>> {
-        return withContext(dispatcher) {
-            dao.getAll()
-        }
-    }
-
     override suspend fun getAllBy(gameId: String): Flow<List<KilledEnemy>> {
         return withContext(dispatcher) {
             dao.getAllBy(gameId)
@@ -32,7 +26,7 @@ class KilledEnemyDtoRepo @Inject constructor(
         }
     }
 
-    override suspend fun delete(id: Long) {
+    override suspend fun deleteById(id: Long) {
         return withContext(dispatcher) {
             dao.deleteById(id)
         }
@@ -41,12 +35,6 @@ class KilledEnemyDtoRepo @Inject constructor(
     override suspend fun deleteAllBy(gameId: String) {
         return withContext(dispatcher) {
             dao.deleteAllBy(gameId)
-        }
-    }
-
-    override suspend fun deleteAll() {
-        return withContext(dispatcher) {
-            dao.deleteAll()
         }
     }
 }

@@ -18,7 +18,7 @@ data object LondorPaleShade : DS3Invader("londor_pale_shade", UIText.Resource(R.
 data object LongfingerKirk : DS3Invader("longfinger_kirk", UIText.Resource(R.string.ds3_longfinger_kirk))
 data object KnightSlayerTsorig : DS3Invader("knight_slayer_tsorig", UIText.Resource(R.string.ds3_knight_slayer_tsorig))
 data object AlvaSeekerOfTheSpurned : DS3Invader("alva_seeker_of_the_spurned", UIText.Resource(R.string.ds3_alva_seeker_of_the_spurned))
-data object CreightonTheWanderer : DS3Invader("creighton_the_wanderer", UIText.Resource(R.string.ds3_creighton_the_wanderer))
+data class CreightonTheWanderer(private val prefix: String = "") : DS3Invader(prefix + "creighton_the_wanderer", UIText.Resource(R.string.ds3_creighton_the_wanderer))
 data object DaughterOfCrystalKriemhild : DS3Invader("daughter_of_crystal_kriemhild", UIText.Resource(R.string.ds3_daughter_of_crystal_kriemhild))
 data object LividPyromancerDunnel : DS3Invader("livid_pyromancer_dunnel", UIText.Resource(R.string.ds3_livid_pyromancer_dunnel))
 data object MoaningKnight : DS3Invader("moaning_knight", UIText.Resource(R.string.ds3_moaning_knight))

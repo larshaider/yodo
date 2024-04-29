@@ -1,8 +1,8 @@
 package de.lhaider.yodo.feature.dark_souls3.location
 
+import de.lhaider.yodo.common.ui_text.UIText
 import de.lhaider.yodo.core.enemy.Enemy
 import de.lhaider.yodo.core.location.Location
-import de.lhaider.yodo.common.ui_text.UIText
 import de.lhaider.yodo.feature.R
 import de.lhaider.yodo.feature.dark_souls3.enemy.AbyssWatchers
 import de.lhaider.yodo.feature.dark_souls3.enemy.AldrichDevourerOfGods
@@ -51,7 +51,7 @@ import de.lhaider.yodo.feature.dark_souls3.enemy.YhormTheGiant
 sealed class DS3Location(
     locationId: String,
     override val enemies: List<Enemy>,
-    override val name: de.lhaider.yodo.common.ui_text.UIText = de.lhaider.yodo.common.ui_text.UIText.Dynamic("Undefined")
+    override val name: UIText = UIText.Dynamic("Undefined")
 ) : Location {
     override val identifier = "ds3_$locationId"
 }
@@ -63,7 +63,7 @@ data object CemeteryOfAsh : DS3Location(
         SwordMaster,
         IudexGundyr
     ),
-    de.lhaider.yodo.common.ui_text.UIText.Resource(R.string.ds3_cemetery_of_ash)
+    UIText.Resource(R.string.ds3_cemetery_of_ash)
 )
 
 data object UndeadSettlement : DS3Location(
@@ -74,7 +74,7 @@ data object UndeadSettlement : DS3Location(
         Demon,
         CurseRottedGreatwood
     ),
-    de.lhaider.yodo.common.ui_text.UIText.Resource(R.string.ds3_undead_settlement)
+    UIText.Resource(R.string.ds3_undead_settlement)
 )
 
 data object RoadOfSacrifices : DS3Location(
@@ -83,7 +83,7 @@ data object RoadOfSacrifices : DS3Location(
         YellowfingerHeysel,
         CrystalSage
     ),
-    de.lhaider.yodo.common.ui_text.UIText.Resource(R.string.ds3_road_of_sacrifices)
+    UIText.Resource(R.string.ds3_road_of_sacrifices)
 )
 
 data object FarronKeep : DS3Location(
@@ -95,7 +95,7 @@ data object FarronKeep : DS3Location(
         StrayDemon,
         AbyssWatchers
     ),
-    de.lhaider.yodo.common.ui_text.UIText.Resource(R.string.ds3_farron_keep)
+    UIText.Resource(R.string.ds3_farron_keep)
 )
 
 data object CathedralOfTheDeep : DS3Location(
@@ -106,7 +106,7 @@ data object CathedralOfTheDeep : DS3Location(
         DeepAccursed,
         DeaconsOfTheDeep
     ),
-    de.lhaider.yodo.common.ui_text.UIText.Resource(R.string.ds3_cathedral_of_the_deep)
+    UIText.Resource(R.string.ds3_cathedral_of_the_deep)
 )
 
 data object CatacombsOfCarthus : DS3Location(
@@ -116,7 +116,7 @@ data object CatacombsOfCarthus : DS3Location(
         Demon,
         HighLordWolnir
     ),
-    de.lhaider.yodo.common.ui_text.UIText.Resource(R.string.ds3_catacombs_of_carthus)
+    UIText.Resource(R.string.ds3_catacombs_of_carthus)
 )
 
 data object SmoulderingLake : DS3Location(
@@ -126,27 +126,30 @@ data object SmoulderingLake : DS3Location(
         CarthusSandworm,
         OldDemonKing
     ),
-    de.lhaider.yodo.common.ui_text.UIText.Resource(R.string.ds3_smouldering_lake)
+    UIText.Resource(R.string.ds3_smouldering_lake)
 )
 
 data object IrithyllOfTheBorealValley : DS3Location(
     "irithyll_of_the_boreal_valley",
     listOf(
         LondorPaleShade,
-        CreightonTheWanderer,
+        CreightonTheWanderer("first"),
+        CreightonTheWanderer("second"),
         AlvaSeekerOfTheSpurned,
         SulyvahnsBeast("first"),
         SulyvahnsBeast("second"),
         SulyvahnsBeast("third"),
         PontiffSulyvahn
-    )
+    ),
+    UIText.Resource(R.string.ds3_irithyll_of_the_boreal_valley)
 )
 
 data object ProfanedCapital : DS3Location(
     "profaned_capital",
     listOf(
         YhormTheGiant
-    )
+    ),
+    UIText.Resource(R.string.ds3_profaned_capital)
 )
 
 data object AnorLondo : DS3Location(
@@ -154,14 +157,16 @@ data object AnorLondo : DS3Location(
     listOf(
         DeepAccursed,
         AldrichDevourerOfGods
-    )
+    ),
+    UIText.Resource(R.string.ds3_anor_londo)
 )
 
 data object HighWallOfLothric : DS3Location(
     "high_wall_of_lothric",
     listOf(
         DancerOfTheBorealValley
-    )
+    ),
+    UIText.Resource(R.string.ds3_high_wall_of_lothric)
 )
 
 data object LothricCastle : DS3Location(
@@ -170,21 +175,24 @@ data object LothricCastle : DS3Location(
         BorealOutriderKnight,
         DragonslayerArmour,
         LothricYoungerPrince
-    )
+    ),
+    UIText.Resource(R.string.ds3_lothric_castle)
 )
 
 data object GrandArchives : DS3Location(
     "grand_archives",
     listOf(
         BorealOutriderKnight
-    )
+    ),
+    UIText.Resource(R.string.ds3_grand_archives)
 )
 
 data object ConsumedKingsGarden : DS3Location(
     "consumed_kings_garden",
     listOf(
         OceirosTheConsumedKing
-    )
+    ),
+    UIText.Resource(R.string.ds3_consumed_kings_garden)
 )
 
 data object UntendedGraves : DS3Location(
@@ -194,7 +202,8 @@ data object UntendedGraves : DS3Location(
         RavenousCrystalLizard("first"),
         RavenousCrystalLizard("second"),
         ChampionGundyr
-    )
+    ),
+    UIText.Resource(R.string.ds3_untended_graves)
 )
 
 data object ArchdragonPeak : DS3Location(
@@ -202,14 +211,16 @@ data object ArchdragonPeak : DS3Location(
     listOf(
         AncientWyvern,
         NamelessKing
-    )
+    ),
+    UIText.Resource(R.string.ds3_archdragon_peak)
 )
 
 data object KilnOfTheFirstFlame : DS3Location(
     "kiln_of_the_first_flame",
     listOf(
         SoulOfCinder
-    )
+    ),
+    UIText.Resource(R.string.ds3_kiln_of_the_first_flame)
 )
 
 data object PaintedWorldOfAriandel : DS3Location(
@@ -218,14 +229,16 @@ data object PaintedWorldOfAriandel : DS3Location(
         LividPyromancerDunnel,
         SisterFriede,
         ChampionsGravetenderAndGreatwolf
-    )
+    ),
+    UIText.Resource(R.string.ds3_painted_world_of_ariandel)
 )
 
 data object DregHeap : DS3Location(
     "dreg_heap",
     listOf(
         DemonPrince
-    )
+    ),
+    UIText.Resource(R.string.ds3_dreg_heap)
 )
 
 data object RingedCity : DS3Location(
@@ -237,5 +250,6 @@ data object RingedCity : DS3Location(
         HalflightSpearOfTheChurch,
         DarkeaterMidir,
         SlaveKnightGael
-    )
+    ),
+    UIText.Resource(R.string.ds3_ringed_city)
 )

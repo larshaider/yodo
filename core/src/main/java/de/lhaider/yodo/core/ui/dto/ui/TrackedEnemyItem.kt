@@ -20,6 +20,7 @@ import de.lhaider.yodo.core.ui.dto.domain.isKilled
 @Composable
 fun TrackedEnemyItem(
     enemy: TrackedEnemy,
+    isReadOnly: Boolean,
     onClick: () -> Unit
 ) {
     Card(
@@ -40,6 +41,7 @@ fun TrackedEnemyItem(
             Checkbox(
                 checked = enemy.isKilled(),
                 onCheckedChange = { onClick() },
+                enabled = !isReadOnly,
                 modifier = Modifier.constrainAs(button) {
                     top.linkTo(parent.top)
                     bottom.linkTo(parent.bottom)

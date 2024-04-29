@@ -3,6 +3,7 @@ package de.lhaider.yodo.core.ui.dto.ui
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.Text
@@ -16,24 +17,22 @@ import de.lhaider.yodo.core.ui.dto.domain.TrackedLocation
 @Composable
 fun TrackedLocationList(
     locations: List<TrackedLocation>,
+    isReadOnly: Boolean,
     onEnemyClicked: (TrackedLocation, TrackedEnemy) -> Unit
 ) {
     LazyColumn {
         locations.forEach { location ->
             item {
+                Spacer(modifier = Modifier.fillMaxWidth().height(8.dp))
                 LocationHeader(location)
             }
 
             items(location.enemies) { enemy ->
-                TrackedEnemyItem(enemy = enemy) {
+                TrackedEnemyItem(enemy = enemy, isReadOnly = isReadOnly) {
                     onEnemyClicked(location, enemy)
                 }
 
-                Spacer(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .height(8.dp)
-                )
+                Spacer(modifier = Modifier.fillMaxWidth().height(8.dp))
             }
         }
     }

@@ -26,11 +26,23 @@ class GameViewModel @AssistedInject constructor(
         val gameName: UIText,
         val locations: List<TrackedLocation>,
         val currentPoints: Int,
-        val maxPoints: Int
+        val maxPoints: Int,
+        val allowSelectionChange: Boolean
     )
 
-    private val _uiState = MutableStateFlow(UIState(isLoading = true, gameName = game.name, locations = emptyList(), currentPoints = 0, maxPoints = 0))
+    private val _uiState = MutableStateFlow(
+        UIState(
+            isLoading = true,
+            gameName = game.name,
+            locations = emptyList(),
+            currentPoints = 0,
+            maxPoints = 0,
+            allowSelectionChange = true
+        )
+    )
     val uiState = _uiState.asStateFlow()
+
+    private var allowModification = true
 
     init {
         collectRepoUpdates()
@@ -66,19 +78,35 @@ class GameViewModel @AssistedInject constructor(
 
     fun onEnemyClicked(location: TrackedLocation, enemy: TrackedEnemy) {
         viewModelScope.launch {
+            if (!allowModification) {
+                return@launch
+            }
+
             val killId = enemy.killId
             if (killId == null) {
                 repo.create(game.id, location.identifier, enemy.identifier)
                 return@launch
             }
 
-            repo.delete(killId)
+            repo.deleteById(killId)
         }
     }
 
-    fun reset() {
+    fun resetRun() {
         viewModelScope.launch {
             repo.deleteAllBy(game.id)
+        }
+    }
+
+    fun onNavigateBack() {
+        viewModelScope.launch {
+            allowModification = false
+
+            _uiState.update {
+                it.copy(
+                    allowSelectionChange = false
+                )
+            }
         }
     }
 }

@@ -39,17 +39,18 @@ import de.lhaider.yodo.feature.demons_souls.enemy.VanguardDemon
 
 sealed class DemonsSoulsLocation(
     locationId: String,
-    override val enemies: List<Enemy>
+    override val enemies: List<Enemy>,
+    override val name: UIText = UIText.Dynamic("Undefined")
 ) : Location {
     override val identifier = "des_$locationId"
-    override val name = UIText.Resource(R.string.undefined)
 }
 
 data object ForlornOutpost : DemonsSoulsLocation(
     "forlorn_outpost",
     listOf(
         VanguardDemon
-    )
+    ),
+    UIText.Resource(R.string.des_forlorn_outpost)
 )
 
 data object BoletarianPalace : DemonsSoulsLocation(
@@ -68,7 +69,8 @@ data object BoletarianPalace : DemonsSoulsLocation(
         AlfredKnightOfTheTower,
         LongBowOolan,
         OstravaOfBoletaria
-    )
+    ),
+    UIText.Resource(R.string.des_boletarian_palace)
 )
 
 data object StonefangTunnel : DemonsSoulsLocation(
@@ -79,7 +81,8 @@ data object StonefangTunnel : DemonsSoulsLocation(
         DragonGod,
         PrimevalDemon,
         ScirvirTheWanderer
-    )
+    ),
+    UIText.Resource(R.string.des_stonefang_tunnel)
 )
 
 data object TowerOfLatria : DemonsSoulsLocation(
@@ -90,7 +93,8 @@ data object TowerOfLatria : DemonsSoulsLocation(
         OldMonk,
         PrimevalDemon,
         LordRydell
-    )
+    ),
+    UIText.Resource(R.string.des_tower_of_latria)
 )
 
 data object ShrineOfStorms : DemonsSoulsLocation(
@@ -102,7 +106,8 @@ data object ShrineOfStorms : DemonsSoulsLocation(
         Vanguard,
         PrimevalDemon,
         Satsuki
-    )
+    ),
+    UIText.Resource(R.string.des_shrine_of_storms)
 )
 
 data object ValleyOfDefilement : DemonsSoulsLocation(
@@ -114,5 +119,6 @@ data object ValleyOfDefilement : DemonsSoulsLocation(
         PrimevalDemon,
         SelenVinland,
         GarlVinland
-    )
+    ),
+    UIText.Resource(R.string.des_valley_of_defilement)
 )

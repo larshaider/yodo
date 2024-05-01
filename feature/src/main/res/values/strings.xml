@@ -1,8 +1,7 @@
 <resources>
     <string name="undefined">Undefined</string>
-    <string name="dark_souls_3" translatable="false">Dark Souls 3</string>
-    <string name="demons_souls" translatable="false">Demon\'s Souls</string>
 
+    <string name="dark_souls_3" translatable="false">Dark Souls 3</string>
     <string name="ds3_cemetery_of_ash">Cemetery Of Ash</string>
     <string name="ds3_iudex_gundyr">Iudex Gundyr</string>
     <string name="ds3_ravenous_crystal_lizard">Ravenous Crystal Lizard</string>
@@ -67,4 +66,44 @@
     <string name="ds3_painted_world_of_ariandel">Painted World of Ariandel</string>
     <string name="ds3_dreg_heap">The Dreg Heap</string>
     <string name="ds3_ringed_city">The Ringed City</string>
+
+    <string name="demons_souls" translatable="false">Demon\'s Souls</string>
+    <string name="des_vanguard_demon">Vanguard Demon</string>
+    <string name="des_phalanx">Phalanx</string>
+    <string name="des_tower_knight">Tower Knight</string>
+    <string name="des_penetrator">Penetrator</string>
+    <string name="des_old_king_alant">Old King Alant</string>
+    <string name="des_armor_spider">Armor Spider</string>
+    <string name="des_flamelurker">Flamelurker</string>
+    <string name="des_dragon_god">Dragon God</string>
+    <string name="des_fools_idol">Fool\'s Idol</string>
+    <string name="des_maneater">Maneater</string>
+    <string name="des_old_monk">Old Monk</string>
+    <string name="des_adjucator">Adjucator</string>
+    <string name="des_old_hero">Old Hero</string>
+    <string name="des_storm_king">Storm King</string>
+    <string name="des_leechmonger">Leechmonger</string>
+    <string name="des_dirty_colossus">Dirty Colossus</string>
+    <string name="des_maiden_astraea">Maiden Astraea</string>
+    <string name="des_executioner_miralda">Executioner Miralda</string>
+    <string name="des_metas_knight_of_the_lance">Metas, Knight of the Lance</string>
+    <string name="des_alfred_knight_of_the_tower">Alfred, Knight of the Tower</string>
+    <string name="des_long_bow_oolan">Long Bow Oolan</string>
+    <string name="des_ostrava_of_boletaria">Ostrava of Boletaria</string>
+    <string name="des_scirvir_the_wanderer">Scirvir, the Wanderer</string>
+    <string name="des_lord_rydell">Lord Rydell</string>
+    <string name="des_satsuki">Satsuki</string>
+    <string name="des_selen_vinland">Selen Vinland</string>
+    <string name="des_garl_vinland">Garl Vinland</string>
+    <string name="des_blue_dragon">Blue Dragon</string>
+    <string name="des_red_dragon">Red Dragon</string>
+    <string name="des_vanguard">Vanguard Demon</string>
+    <string name="des_old_king_doran">Old King Doran</string>
+    <string name="des_primeval_demon">Primeval Demon</string>
+    <string name="des_forlorn_outpost">Forlorn Outpost</string>
+    <string name="des_boletarian_palace">Boletarian Palace</string>
+    <string name="des_stonefang_tunnel">Stonefang Tunnel</string>
+    <string name="des_tower_of_latria">Tower of Latria</string>
+    <string name="des_shrine_of_storms">Shrine of Storms</string>
+    <string name="des_valley_of_defilement">Valley of Defilement</string>
 </resources>

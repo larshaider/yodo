@@ -12,7 +12,7 @@ import de.lhaider.yodo.feature.demons_souls.location.ValleyOfDefilement
 
 class DemonsSouls : Game {
 
-    override val id = "demons_souls"
+    override val id = "des"
 
     override val name = UIText.Resource(R.string.demons_souls)
 

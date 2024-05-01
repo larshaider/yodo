@@ -41,7 +41,7 @@ sealed class DemonsSoulsLocation(
     locationId: String,
     override val enemies: List<Enemy>
 ) : Location {
-    override val identifier = "demons_souls_$locationId"
+    override val identifier = "des_$locationId"
     override val name = UIText.Resource(R.string.undefined)
 }
 

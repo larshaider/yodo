@@ -7,7 +7,7 @@ import de.lhaider.yodo.feature.R
 sealed class DemonsSoulsMiniBoss(
     enemyId: String
 ) : MiniBoss {
-    override val identifier = "demons_souls_mini_boss_$enemyId"
+    override val identifier = "des_mini_boss_$enemyId"
     override val pointsForKill = 3
     override val name = UIText.Resource(R.string.undefined)
 }

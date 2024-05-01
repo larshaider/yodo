@@ -1,7 +1,7 @@
 <resources>
     <string name="undefined">Undefined</string>
-    <string name="dark_souls_3">Dark Souls 3</string>
-    <string name="demons_souls">Demon\'s Souls</string>
+    <string name="dark_souls_3" translatable="false">Dark Souls 3</string>
+    <string name="demons_souls" translatable="false">Demon\'s Souls</string>
 
     <string name="ds3_cemetery_of_ash">Cemetery Of Ash</string>
     <string name="ds3_iudex_gundyr">Iudex Gundyr</string>

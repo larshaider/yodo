@@ -132,6 +132,7 @@
     <string name="ds_centipede_demon">Centipede Demon</string>
     <string name="ds_chaos_witch_quelaag">Chaos Witch Quelaag</string>
     <string name="ds_blighttown">Blighttown</string>
+    <string name="ds_quelaags_domain">Quelaag\'s Domain</string>
     <string name="ds_crossbreed_priscilla">Crossbreed Priscilla</string>
     <string name="ds_painted_world_of_ariamis">Painted World Of Ariamis</string>
     <string name="ds_dark_sun_gwyndolin">Dark Sun Gwyndolin</string>
@@ -145,7 +146,7 @@
     <string name="ds_iron_golem">Iron Golem</string>
     <string name="ds_sens_fortress">Sen\'s Fortress</string>
     <string name="ds_moonlight_butterfly">Moonlight Butterfly</string>
-    <string name="ds_nito">Nito</string>
+    <string name="ds_gravelord_nito">Gravelord Nito</string>
     <string name="ds_tomb_of_giants">Tomb Of Giants</string>
     <string name="ds_pinwheel">Pinwheel</string>
     <string name="ds_catacombs">Catacombs</string>
@@ -169,18 +170,19 @@
     <string name="ds_giant_cat">Giant Cat</string>
     <string name="ds_giant_rat">Giant Rat</string>
     <string name="ds_golden_crystal_golem">Golden Crystal Golem</string>
-    <string name="ds_havel">Havel</string>
+    <string name="ds_havel_the_rock">Havel The Rock</string>
     <string name="ds_hellkite_wyvern">Hellkite Wyvern</string>
     <string name="ds_hydra">Hydra</string>
     <string name="ds_ricard_the_archer">Ricard The Archer</string>
     <string name="ds_valley_of_drakes">Valley Of Drakes</string>
     <string name="ds_undead_dragon">Undead Dragon</string>
     <string name="ds_mass_of_souls">Mass Of Souls</string>
-    <string name="ds_new_londo">New Londo</string>
+    <string name="ds_new_londo_ruins">New Londo Ruins</string>
     <string name="ds_kirk_knight_of_thorns">Kirk Knight Of Thorns</string>
     <string name="ds_maneater_mildred">Maneater Mildred</string>
     <string name="ds_marvelous_chester">Marvelous Chester</string>
     <string name="ds_paladin_leeroy">Paladin Leeroy</string>
     <string name="ds_xanthous_king_jeremiah">Xanthous King Jeremiah</string>
-    <string name="ds_olacile_township">Olacile Township</string>
+    <string name="ds_oolacile_township">Oolacile Township</string>
+    <string name="ds_parasitic_wall_hugger">Parasitic Wall Hugger</string>
 </resources>

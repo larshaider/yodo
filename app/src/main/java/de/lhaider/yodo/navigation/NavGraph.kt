@@ -7,6 +7,7 @@ import androidx.navigation.compose.composable
 import de.lhaider.yodo.MainScreen
 import de.lhaider.yodo.core.ui.GameView
 import de.lhaider.yodo.core.ui.gameViewModel
+import de.lhaider.yodo.feature.dark_souls.game.DarkSouls
 import de.lhaider.yodo.feature.dark_souls3.game.DarkSouls3
 import de.lhaider.yodo.feature.demons_souls.game.DemonsSouls
 
@@ -25,17 +26,24 @@ fun NavGraph(
             )
         }
 
-        composable<Screen.DarkSouls3> {
-            GameView(
-                navController = navController,
-                viewModel = gameViewModel(game = DarkSouls3())
-            )
-        }
-
         composable<Screen.DemonsSouls> {
             GameView(
                 navController = navController,
                 viewModel = gameViewModel(game = DemonsSouls())
+            )
+        }
+
+        composable<Screen.DarkSouls> {
+            GameView(
+                navController = navController,
+                viewModel = gameViewModel(game = DarkSouls())
+            )
+        }
+
+        composable<Screen.DarkSouls3> {
+            GameView(
+                navController = navController,
+                viewModel = gameViewModel(game = DarkSouls3())
             )
         }
     }

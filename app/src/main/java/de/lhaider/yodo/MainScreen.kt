@@ -24,7 +24,6 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import de.lhaider.yodo.navigation.Screen
-import de.lhaider.yodo.navigation.navigate
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

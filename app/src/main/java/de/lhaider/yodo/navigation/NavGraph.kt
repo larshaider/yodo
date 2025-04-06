@@ -2,8 +2,6 @@ package de.lhaider.yodo.navigation
 
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
-import androidx.navigation.NavOptions
-import androidx.navigation.Navigator
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import de.lhaider.yodo.MainScreen
@@ -19,34 +17,26 @@ fun NavGraph(
 ) {
     NavHost(
         navController = navController,
-        startDestination = startDestination.route
+        startDestination = startDestination
     ) {
-        composable(Screen.Home.route) {
+        composable<Screen.Home> {
             MainScreen(
                 navController = navController
             )
         }
 
-        composable(Screen.DarkSouls3.route) {
+        composable<Screen.DarkSouls3> {
             GameView(
                 navController = navController,
                 viewModel = gameViewModel(game = DarkSouls3())
             )
         }
 
-        composable(Screen.DemonsSouls.route) {
+        composable<Screen.DemonsSouls> {
             GameView(
                 navController = navController,
                 viewModel = gameViewModel(game = DemonsSouls())
             )
         }
     }
-}
-
-fun NavHostController.navigate(
-    screen: Screen,
-    navOptions: NavOptions? = null,
-    navigatorExtras: Navigator.Extras? = null
-) {
-    this.navigate(screen.route, navOptions, navigatorExtras)
 }

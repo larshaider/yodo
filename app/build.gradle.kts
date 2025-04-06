@@ -3,11 +3,14 @@ plugins {
     alias(libs.plugins.jetbrains.kotlin.android)
     alias(libs.plugins.hilt.android)
     alias(libs.plugins.android.ksp)
+    alias(libs.plugins.compose.compiler)
+
+    kotlin("plugin.serialization") version "2.1.20"
 }
 
 android {
     namespace = "de.lhaider.yodo"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "de.lhaider.yodo"
@@ -46,10 +49,6 @@ android {
         compose = true
     }
 
-    composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.9"
-    }
-
     packaging {
         resources {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
@@ -77,6 +76,8 @@ dependencies {
     ksp(libs.hilt.android.compiler)
     ksp(libs.androidx.hilt.compiler)
     implementation(libs.androidx.hilt.navigation.compose)
+
+    implementation(libs.kotlinx.serialization.json)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

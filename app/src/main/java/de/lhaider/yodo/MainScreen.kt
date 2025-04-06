@@ -75,6 +75,27 @@ fun MainScreen(
                 )
 
                 Card(
+                    onClick = { navController.navigate(Screen.DarkSouls) },
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .height(200.dp),
+                    shape = RoundedCornerShape(8.dp),
+                ) {
+                    Image(
+                        modifier = Modifier.fillMaxWidth(),
+                        painter = painterResource(id = R.drawable.bg_dark_souls),
+                        contentDescription = "Dark Souls",
+                        contentScale = ContentScale.FillBounds
+                    )
+                }
+
+                Spacer(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .height(16.dp)
+                )
+
+                Card(
                     onClick = { navController.navigate(Screen.DarkSouls3) },
                     modifier = Modifier
                         .fillMaxWidth()
